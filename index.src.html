@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scheer | SNS運用代行</title>
+<meta name="description" content="発信をあきらめない人のためのSNS運用代行 Scheer。Instagram・YouTube・TikTokの投稿制作から運用まで、世界観を大切に丁寧に。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FBF7F1;
+  --beige:#F3EBE1;
+  --beige-deep:#EADFD1;
+  --rose:#C98C7E;
+  --rose-soft:#E4C3BB;
+  --rose-pale:#F5E4DF;
+  --sage:#A9B0A0;
+  --ink:#463E38;
+  --ink-soft:#7C726A;
+  --line:#E4D8C9;
+  --white:#FFFFFF;
+  --serif:'Zen Old Mincho',serif;
+  --gothic:'Zen Kaku Gothic New',sans-serif;
+  --script:'Cormorant Garamond',serif;
+  --shadow:0 18px 50px -24px rgba(120,92,74,.35);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{
+  font-family:var(--gothic);
+  color:var(--ink);
+  background:var(--cream);
+  line-height:1.9;
+  font-weight:400;
+  letter-spacing:.04em;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1080px,90%);margin-inline:auto}
+.en{font-family:var(--script);font-style:italic;letter-spacing:.06em}
+
+/* ===== decorative label ===== */
+.eyebrow{
+  display:inline-flex;align-items:center;gap:.6em;
+  font-family:var(--script);font-style:italic;
+  font-size:1.15rem;color:var(--rose);letter-spacing:.08em;
+  margin-bottom:.9rem;
+}
+.eyebrow::before{content:"";width:34px;height:1px;background:var(--rose-soft)}
+.sec-title{
+  font-family:var(--serif);font-weight:500;
+  font-size:clamp(1.7rem,4.2vw,2.5rem);
+  line-height:1.5;letter-spacing:.06em;margin-bottom:1.1rem;
+}
+.sec-title .accent{color:var(--rose)}
+.lead{color:var(--ink-soft);font-size:.98rem;max-width:34em}
+
+/* ===== header ===== */
+header{
+  position:fixed;top:0;left:0;width:100%;z-index:50;
+  padding:1.1rem 0;transition:.4s;
+}
+header.scrolled{
+  background:rgba(251,247,241,.86);
+  backdrop-filter:blur(10px);
+  box-shadow:0 1px 0 rgba(228,216,201,.7);
+  padding:.7rem 0;
+}
+.nav{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:var(--serif);font-size:1.35rem;letter-spacing:.14em;font-weight:600}
+.logo small{font-family:var(--script);font-style:italic;font-size:.72rem;display:block;color:var(--rose);letter-spacing:.1em;font-weight:500;margin-top:-2px}
+.menu{display:flex;gap:2rem;align-items:center;font-size:.82rem;letter-spacing:.1em}
+.menu a{position:relative;color:var(--ink-soft);transition:.3s}
+.menu a::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:1px;background:var(--rose);transition:.3s}
+.menu a:hover{color:var(--ink)}
+.menu a:hover::after{width:100%}
+.menu .cta{
+  background:var(--rose);color:#fff;padding:.55em 1.4em;border-radius:999px;
+  font-size:.8rem;letter-spacing:.08em;transition:.35s;
+}
+.menu .cta:hover{background:var(--ink);transform:translateY(-2px)}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px}
+.burger span{width:24px;height:2px;background:var(--ink);border-radius:2px;transition:.3s}
+
+/* ===== hero ===== */
+.hero{position:relative;padding:11rem 0 6rem;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;top:-12%;right:-8%;width:46vw;height:46vw;max-width:560px;max-height:560px;
+  background:radial-gradient(circle at 30% 30%,var(--rose-pale),var(--beige) 70%);
+  border-radius:46% 54% 58% 42%/48% 44% 56% 52%;
+  filter:blur(2px);z-index:0;animation:float 14s ease-in-out infinite;
+}
+.hero::after{
+  content:"";position:absolute;bottom:6%;left:-6%;width:22vw;height:22vw;max-width:260px;max-height:260px;
+  background:radial-gradient(circle,var(--beige-deep),transparent 70%);
+  border-radius:50%;z-index:0;animation:float 18s ease-in-out infinite reverse;
+}
+@keyframes float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-26px) rotate(8deg)}}
+.hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:center}
+.hero-copy h1{
+  font-family:var(--serif);font-weight:500;
+  font-size:clamp(2rem,5.6vw,3.5rem);line-height:1.55;letter-spacing:.04em;
+  margin-bottom:1.4rem;
+}
+.hero-copy h1 .accent{color:var(--rose)}
+.hero-copy h1 .thin{font-size:.62em;display:block;color:var(--ink-soft);letter-spacing:.1em;margin-top:.5em;font-weight:400}
+.hero-copy p{color:var(--ink-soft);font-size:.98rem;margin-bottom:2.2rem;max-width:26em}
+.hero-tag{font-family:var(--script);font-style:italic;color:var(--rose);font-size:1.3rem;margin-bottom:1rem;display:block}
+.btn{
+  display:inline-flex;align-items:center;gap:.7em;
+  background:var(--ink);color:#fff;padding:.95em 2.2em;border-radius:999px;
+  font-size:.86rem;letter-spacing:.1em;transition:.4s;box-shadow:var(--shadow);
+}
+.btn:hover{background:var(--rose);transform:translateY(-3px)}
+.btn .arw{transition:.3s}
+.btn:hover .arw{transform:translateX(4px)}
+.hero-visual{position:relative}
+.hero-photo{
+  aspect-ratio:3/4;border-radius:180px 180px 24px 24px;
+  background:linear-gradient(160deg,var(--rose-pale),var(--beige-deep));
+  box-shadow:var(--shadow);position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+}
+.hero-photo img{width:100%;height:100%;object-fit:cover}
+.hero-photo.hero-logo{background:linear-gradient(160deg,#F1DBD3,#E3C7B9)}
+.hero-photo .brand-logo{width:84%;height:auto;object-fit:contain;filter:drop-shadow(0 6px 16px rgba(150,110,60,.18))}
+.logo-mark{position:relative;z-index:2;text-align:center;font-family:var(--script);font-style:italic;color:var(--rose);font-size:clamp(3rem,7vw,4.6rem);letter-spacing:.03em;line-height:1}
+.logo-mark span{display:block;font-family:var(--gothic);font-style:normal;font-size:.19em;letter-spacing:.4em;color:var(--ink-soft);margin-top:1.5em;font-weight:500;padding-left:.4em}
+.hero-photo::after{content:"";position:absolute;inset:0;border:1px solid rgba(255,255,255,.5);border-radius:inherit;margin:10px;pointer-events:none}
+.dot-badge{
+  position:absolute;bottom:-18px;left:-22px;width:120px;height:120px;border-radius:50%;
+  background:var(--white);box-shadow:var(--shadow);display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;z-index:3;
+  animation:float 10s ease-in-out infinite;
+}
+.dot-badge b{font-family:var(--serif);font-size:1.7rem;color:var(--rose);line-height:1}
+.dot-badge small{font-size:.62rem;color:var(--ink-soft);letter-spacing:.08em;margin-top:4px}
+
+/* ===== marquee ===== */
+.marquee{background:var(--beige);padding:1.1rem 0;overflow:hidden;white-space:nowrap;border-block:1px solid var(--line)}
+.marquee-track{display:inline-flex;gap:3rem;animation:scroll 26s linear infinite;font-family:var(--serif);color:var(--ink-soft);font-size:1rem;letter-spacing:.14em}
+.marquee-track span{display:inline-flex;gap:3rem}
+.marquee-track b{color:var(--rose);font-weight:400}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* ===== section base ===== */
+section{position:relative}
+.pad{padding:6.5rem 0}
+.center{text-align:center}
+.center .eyebrow{justify-content:center}
+.center .lead{margin-inline:auto}
+
+/* ===== about ===== */
+.about{background:var(--white)}
+.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:3.5rem;align-items:center}
+.about-photo{
+  aspect-ratio:4/5;border-radius:24px;overflow:hidden;position:relative;
+  background:linear-gradient(150deg,var(--beige-deep),var(--rose-pale));box-shadow:var(--shadow);
+  display:flex;align-items:center;justify-content:center;
+}
+.about-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.about-photo .frame{position:absolute;inset:12px;border:1px solid rgba(255,255,255,.55);border-radius:16px;z-index:2;pointer-events:none}
+.about-name{font-family:var(--serif);font-size:1.6rem;margin:.4rem 0 .2rem;letter-spacing:.08em}
+.about-name small{font-family:var(--script);font-style:italic;color:var(--rose);font-size:.9rem;margin-left:.6em}
+.about-role{color:var(--rose);font-size:.85rem;letter-spacing:.12em;margin-bottom:1.4rem}
+.about-text p{color:var(--ink-soft);font-size:.96rem;margin-bottom:1rem}
+.about-text p .em{color:var(--ink);font-weight:500}
+.about-tags{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.6rem}
+.about-tags span{
+  background:var(--rose-pale);color:var(--rose);font-size:.75rem;
+  padding:.4em 1.1em;border-radius:999px;letter-spacing:.06em;
+}
+
+/* ===== services ===== */
+.services{background:var(--cream)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;margin-top:3rem}
+.card{
+  background:var(--white);border-radius:22px;padding:2.4rem 1.9rem;
+  border:1px solid var(--line);transition:.45s;position:relative;overflow:hidden;
+}
+.card::before{content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--rose-soft),var(--rose));transform:scaleX(0);transform-origin:left;transition:.45s}
+.card:hover{transform:translateY(-8px);box-shadow:var(--shadow);border-color:transparent}
+.card:hover::before{transform:scaleX(1)}
+.card-ico{
+  width:58px;height:58px;border-radius:50%;background:var(--rose-pale);
+  display:flex;align-items:center;justify-content:center;margin-bottom:1.4rem;font-size:1.5rem;
+}
+.card-no{font-family:var(--script);font-style:italic;color:var(--rose-soft);font-size:1rem;position:absolute;top:1.6rem;right:1.8rem}
+.card h3{font-family:var(--serif);font-size:1.22rem;margin-bottom:.8rem;letter-spacing:.05em;font-weight:500}
+.card p{color:var(--ink-soft);font-size:.88rem;line-height:1.85}
+
+/* ===== works ===== */
+.works{background:var(--white)}
+.work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:3rem}
+.work{border-radius:20px;overflow:hidden;cursor:pointer;position:relative;box-shadow:0 10px 30px -22px rgba(120,92,74,.5)}
+.work-thumb{aspect-ratio:4/5;position:relative;display:flex;align-items:flex-end;padding:1.4rem;transition:.5s;overflow:hidden}
+.work:hover .work-thumb{transform:scale(1.04)}
+.work-dia{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:1.6rem}
+.work-dia svg{width:52%;height:auto;overflow:visible}
+.work-cat{position:relative;z-index:2;font-family:var(--script);font-style:italic;font-size:.9rem;color:var(--ink-soft);opacity:.9}
+.work-body{padding:1.2rem 1.3rem 1.5rem;background:var(--white)}
+.work-body h4{font-family:var(--serif);font-size:1.05rem;font-weight:500;letter-spacing:.04em;margin-bottom:.5rem}
+.work-metrics{display:flex;gap:1.2rem;color:var(--ink-soft);font-size:.78rem}
+.work-metrics b{font-family:var(--serif);color:var(--rose);font-size:1.15rem;display:block;font-weight:600}
+
+/* ===== stats ===== */
+.stats{background:var(--beige);position:relative}
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;text-align:center}
+.stat b{font-family:var(--serif);font-size:clamp(2.2rem,6vw,3.2rem);color:var(--rose);line-height:1;display:block}
+.stat b .unit{font-size:.42em;margin-left:.15em;color:var(--ink-soft)}
+.stat p{font-size:.82rem;color:var(--ink-soft);margin-top:.7rem;letter-spacing:.08em}
+.stat{position:relative}
+.stat:not(:last-child)::after{content:"";position:absolute;right:-.75rem;top:20%;height:60%;width:1px;background:var(--line)}
+
+/* ===== flow ===== */
+.flow{background:var(--cream)}
+.flow-list{margin-top:3rem;position:relative}
+.flow-list::before{content:"";position:absolute;left:27px;top:10px;bottom:10px;width:2px;background:linear-gradient(var(--rose-soft),transparent)}
+.flow-item{display:flex;gap:1.8rem;padding:1.3rem 0;position:relative}
+.flow-num{
+  flex:none;width:56px;height:56px;border-radius:50%;background:var(--white);
+  border:2px solid var(--rose-soft);display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif);color:var(--rose);font-size:1.2rem;z-index:2;box-shadow:0 6px 16px -10px rgba(120,92,74,.5)
+}
+.flow-body h4{font-family:var(--serif);font-size:1.15rem;font-weight:500;margin-bottom:.4rem;letter-spacing:.04em}
+.flow-body p{color:var(--ink-soft);font-size:.9rem}
+
+/* ===== voice ===== */
+.voice{background:var(--white)}
+.voice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;margin-top:3rem}
+.voice-card{background:var(--cream);border-radius:20px;padding:2.2rem 1.9rem;position:relative;border:1px solid var(--line)}
+.voice-card .quote{font-family:var(--serif);font-size:2.6rem;color:var(--rose-soft);line-height:1;height:.6em;display:block}
+.voice-card p{color:var(--ink-soft);font-size:.9rem;margin:.6rem 0 1.4rem}
+.voice-who{display:flex;align-items:center;gap:.8rem}
+.voice-ava{width:42px;height:42px;border-radius:50%;background:linear-gradient(140deg,var(--rose-soft),var(--beige-deep))}
+.voice-who b{font-size:.82rem;font-weight:500;display:block}
+.voice-who small{font-size:.72rem;color:var(--ink-soft)}
+
+/* ===== faq ===== */
+.faq{background:var(--beige)}
+.faq-list{max-width:760px;margin:3rem auto 0}
+.faq-item{background:var(--white);border-radius:16px;margin-bottom:1rem;overflow:hidden;border:1px solid var(--line)}
+.faq-q{padding:1.3rem 1.6rem;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:500;font-size:.95rem;gap:1rem}
+.faq-q .mark{flex:none;font-family:var(--serif);color:var(--rose);transition:.3s;font-size:1.3rem}
+.faq-item.open .mark{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;color:var(--ink-soft);font-size:.88rem}
+.faq-a div{padding:0 1.6rem 1.4rem}
+
+/* ===== cta ===== */
+.cta-sec{background:var(--cream);text-align:center;position:relative;overflow:hidden}
+.cta-box{
+  background:linear-gradient(150deg,var(--rose-pale),var(--beige-deep));
+  border-radius:32px;padding:4.5rem 2rem;position:relative;overflow:hidden;box-shadow:var(--shadow)
+}
+.cta-box::before{content:"";position:absolute;top:-40px;right:-40px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.35)}
+.cta-box::after{content:"";position:absolute;bottom:-60px;left:-30px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.25)}
+.cta-box .eyebrow{justify-content:center}
+.cta-box h2{font-family:var(--serif);font-size:clamp(1.6rem,4.5vw,2.4rem);font-weight:500;line-height:1.6;margin-bottom:1rem;position:relative;z-index:2}
+.cta-box p{color:var(--ink-soft);position:relative;z-index:2;margin-bottom:2rem}
+.cta-box .btn{position:relative;z-index:2}
+
+/* ===== footer ===== */
+footer{background:var(--ink);color:#EFE6DC;padding:3.5rem 0 2rem;text-align:center}
+.foot-logo{font-family:var(--serif);font-size:1.5rem;letter-spacing:.16em;margin-bottom:.4rem}
+.foot-logo small{font-family:var(--script);font-style:italic;display:block;color:var(--rose-soft);font-size:.8rem}
+.foot-links{display:flex;gap:1.6rem;justify-content:center;margin:1.6rem 0;flex-wrap:wrap;font-size:.82rem}
+.foot-links a{color:#CFC3B7;transition:.3s}
+.foot-links a:hover{color:#fff}
+.foot-copy{font-size:.72rem;color:#9C9186;margin-top:1.4rem;letter-spacing:.08em}
+
+/* ===== reveal ===== */
+.reveal{opacity:0;transform:translateY(34px);transition:.9s cubic-bezier(.16,.7,.3,1)}
+.reveal.show{opacity:1;transform:none}
+.reveal.d1{transition-delay:.12s}.reveal.d2{transition-delay:.24s}.reveal.d3{transition-delay:.36s}
+/* fallback: if JS never runs, show everything at rest (no blank sections) */
+html:not(.js) .reveal{opacity:1;transform:none;transition:none}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1!important;transform:none!important;transition:none!important}
+  .marquee-track{animation:none!important}
+  .hero::before,.hero::after,.dot-badge{animation:none!important}
+}
+
+/* ===== responsive ===== */
+@media(max-width:860px){
+  .menu{
+    position:fixed;top:0;right:-100%;height:100vh;width:70%;max-width:300px;
+    background:var(--cream);flex-direction:column;justify-content:center;gap:2rem;
+    box-shadow:-12px 0 40px -20px rgba(120,92,74,.4);transition:.45s;font-size:1rem;padding:2rem
+  }
+  .menu.open{right:0}
+  .burger{display:flex;z-index:60}
+  .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .burger.open span:nth-child(2){opacity:0}
+  .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .hero-inner{grid-template-columns:1fr;gap:3.5rem}
+  .hero-visual{max-width:340px;margin-inline:auto}
+  .about-grid{grid-template-columns:1fr;gap:2.5rem}
+  .about-photo{max-width:380px;margin-inline:auto}
+  .cards,.work-grid,.voice-grid{grid-template-columns:1fr}
+  .stat-grid{grid-template-columns:repeat(2,1fr);gap:2.5rem 1.5rem}
+  .stat:nth-child(2)::after{display:none}
+  .pad{padding:5rem 0}
+}
+@media(max-width:520px){
+  .hero{padding:9rem 0 4rem}
+  .cta-box{padding:3.2rem 1.4rem}
+}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+
+<!-- ===== HEADER ===== -->
+<header id="header">
+  <div class="wrap nav">
+    <a href="#top" class="logo">Scheer<small>SNS運用・編集代行チーム</small></a>
+    <nav class="menu" id="menu">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#works">Works</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#voice">Strengths</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact" class="cta">お問い合わせ</a>
+    </nav>
+    <div class="burger" id="burger"><span></span><span></span><span></span></div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="top">
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <span class="hero-tag reveal">Instagram / YouTube / TikTok 運用代行</span>
+      <h1 class="reveal d1">
+        あなたの“らしさ”を、<br>
+        <span class="accent">届く言葉</span>にのせて。
+        <span class="thin">発信する時間がなくても、想いはちゃんと伝わる。</span>
+      </h1>
+      <p class="reveal d2">本業を持ちながら発信したいあなたへ。投稿の企画・制作から運用まで、世界観を守りながら“伝わるSNS”を丁寧に育てます。</p>
+      <a href="#contact" class="btn reveal d3">まずは相談してみる <span class="arw">→</span></a>
+    </div>
+    <div class="hero-visual reveal d2">
+      <div class="hero-photo hero-logo"><img class="brand-logo" src="images/scheer-logo.png" alt="Scheer ロゴ"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MARQUEE ===== -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>Instagram <b>◍</b> YouTube <b>◍</b> TikTok <b>◍</b> 投稿制作 <b>◍</b> 運用代行 <b>◍</b> 世界観設計 <b>◍</b> リール台本 <b>◍</b> キャプション <b>◍</b> </span>
+    <span>Instagram <b>◍</b> YouTube <b>◍</b> TikTok <b>◍</b> 投稿制作 <b>◍</b> 運用代行 <b>◍</b> 世界観設計 <b>◍</b> リール台本 <b>◍</b> キャプション <b>◍</b> </span>
+  </div>
+</div>
+
+<!-- ===== ABOUT ===== -->
+<section class="about pad" id="about">
+  <div class="wrap about-grid">
+    <div class="about-photo reveal">
+      <img src="images/IMG_0049.jpg" alt="しな｜Scheer 代表" style="object-position:54% 40%">
+      <div class="frame"></div>
+    </div>
+    <div class="about-text reveal d1">
+      <span class="eyebrow">About Scheer</span>
+      <div class="about-name">しな</div>
+      <div class="about-role">SNS運用代行チーム「Scheer」代表</div>
+      <p><span class="em">「発信したいのに、時間・知識が足りない」</span>——そんな声にいちばん寄り添いたくて、Scheerを立ち上げました。</p>
+      <p><span class="em">Scheerは、Instagram運用や動画編集スキルに長けたメンバーが集まるSNS運用代行チーム。</span>「アカウントの運用ノウハウ」「指を止めてもらう動画編集のポイント」を知り尽くしたつくり手たちが、総フォロワー156.8万アカウントの裏側を支えています。もちろん、アカウント運用や戦略設計まで、まるっとお任せいただけます。</p>
+      <p>代表のしな自身もInstagram（@shina_lifework「おうちで働くを叶えたママ」）を運用中。開始1ヶ月で月間再生 約25.7万回、1投稿でのフォロー転換率47%、表示の83.5%がフォロワー以外という“自然に広がりフォローされる発信”を実現しました。</p>
+      <p>ただ投稿を代わりに作るのではありません。あなたの言葉の温度や世界観はそのままに、数字もファンもしっかり伸ばします。企画・台本・キャプション・分析まで、まるごとお任せください。</p>
+      <div class="about-tags">
+        <span>企画設計</span><span>リール台本</span><span>キャプション</span><span>世界観デザイン</span><span>分析改善</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="services pad" id="services">
+  <div class="wrap center">
+    <span class="eyebrow reveal">Services</span>
+    <h2 class="sec-title reveal d1">私たちができる、<span class="accent">3つのこと</span></h2>
+    <p class="lead reveal d2">Instagramに限らず、YouTube・TikTokなど各種SNS向けの動画制作から運用まで対応。「まるっとお任せ」も「一部だけ」も、あなたの状況に合わせて必要なところから伴走します。</p>
+  </div>
+  <div class="wrap cards">
+    <div class="card reveal">
+      <span class="card-no">01</span>
+      <div class="card-ico">✎</div>
+      <h3>動画制作・投稿まるっと</h3>
+      <p>Instagram・YouTube・TikTokなど各種SNS向けのショート動画を、台本づくりからデザイン・キャプションまで。世界観を崩さず“思わず保存したくなる”投稿に仕上げます。</p>
+    </div>
+    <div class="card reveal d1">
+      <span class="card-no">02</span>
+      <div class="card-ico">◍</div>
+      <h3>アカウント運用代行</h3>
+      <p>投稿スケジュール管理・分析・改善提案までワンストップ。発信を止めずに、数字とファンをしっかり伸ばします。</p>
+    </div>
+    <div class="card reveal d2">
+      <span class="card-no">03</span>
+      <div class="card-ico">❀</div>
+      <h3>世界観・戦略設計</h3>
+      <p>「誰に・何を・どう届けるか」から一緒に整理。ブレない発信軸とビジュアルトーンをつくり、あなたらしさを言語化します。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WORKS ===== -->
+<section class="works pad" id="works">
+  <div class="wrap center">
+    <span class="eyebrow reveal">Works</span>
+    <h2 class="sec-title reveal d1">これまでの<span class="accent">制作・運用実績</span></h2>
+    <p class="lead reveal d2">スピードも、バズも、むずかしい投稿でも。<br>数字で語れる成果を、いくつも積み上げてきました。</p>
+  </div>
+  <div class="wrap work-grid">
+    <div class="work reveal">
+      <div class="work-thumb" style="background:linear-gradient(155deg,#F6E7E1,#EAD3CC)"><div class="work-dia"><svg viewBox="0 0 120 96"><line x1="8" y1="86" x2="112" y2="86" stroke="#D9B7AE" stroke-width="2"/><polyline points="12,80 38,64 62,50 84,30 106,12" fill="none" stroke="#C98C7E" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="106" cy="12" r="6.5" fill="#C98C7E"/></svg></div><span class="work-cat">Speed / 立ち上げ</span></div>
+      <div class="work-body"><h4>開始1ヶ月で、月25.7万再生</h4>
+        <div class="work-metrics"><div><b>25.7万</b>月間再生</div><div><b>83.5%</b>フォロワー外へ</div></div></div>
+    </div>
+    <div class="work reveal d1">
+      <div class="work-thumb" style="background:linear-gradient(155deg,#F3E7EA,#E7C9CE)"><div class="work-dia"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="9" fill="#C98C7E"/><circle cx="60" cy="60" r="22" fill="none" stroke="#C98C7E" stroke-width="3.2" opacity="0.55"/><circle cx="60" cy="60" r="37" fill="none" stroke="#C98C7E" stroke-width="2.6" opacity="0.32"/><circle cx="60" cy="60" r="52" fill="none" stroke="#C98C7E" stroke-width="2" opacity="0.17"/></svg></div><span class="work-cat">Viral / バズ</span></div>
+      <div class="work-body"><h4>1本で14万回のバズを創出</h4>
+        <div class="work-metrics"><div><b>14万回</b>最高再生</div><div><b>保存</b>されるノウハウ系</div></div></div>
+    </div>
+    <div class="work reveal">
+      <div class="work-thumb" style="background:linear-gradient(155deg,#F1EAE0,#E2D2BE)"><div class="work-dia"><svg viewBox="0 0 120 120"><rect x="14" y="14" width="28" height="28" rx="5" fill="#E4C3BB" opacity="0.5"/><rect x="50" y="14" width="28" height="28" rx="5" fill="#C98C7E" opacity="1"/><rect x="86" y="14" width="28" height="28" rx="5" fill="#E4C3BB" opacity="0.5"/><rect x="14" y="50" width="28" height="28" rx="5" fill="#E4C3BB" opacity="0.5"/><rect x="50" y="50" width="28" height="28" rx="5" fill="#E4C3BB" opacity="0.5"/><rect x="86" y="50" width="28" height="28" rx="5" fill="#E4C3BB" opacity="0.5"/><rect x="14" y="86" width="28" height="28" rx="5" fill="#E4C3BB" opacity="0.5"/><rect x="50" y="86" width="28" height="28" rx="5" fill="#E4C3BB" opacity="0.5"/><rect x="86" y="86" width="28" height="28" rx="5" fill="#E4C3BB" opacity="0.5"/></svg></div><span class="work-cat">Feed / 難所で結果</span></div>
+      <div class="work-body"><h4>伸びにくいフィードで4万回超</h4>
+        <div class="work-metrics"><div><b>4万回+</b>フィード投稿で</div><div><b>常識超え</b>の到達数</div></div></div>
+    </div>
+    <div class="work reveal d1">
+      <div class="work-thumb" style="background:linear-gradient(155deg,#F4EAE6,#E6CDC5)"><div class="work-dia"><svg viewBox="0 0 120 100"><line x1="16" y1="86" x2="104" y2="86" stroke="#D9B7AE" stroke-width="2"/><rect x="32" y="20" width="22" height="66" rx="5" fill="#C98C7E"/><rect x="70" y="53" width="22" height="33" rx="5" fill="#E4C3BB"/></svg></div><span class="work-cat">Stories / 深い関係</span></div>
+      <div class="work-body"><h4>ストーリー閲覧率が常に高水準</h4>
+        <div class="work-metrics"><div><b>20%↑</b>平均閲覧率</div><div><b>30%↑</b>最高値</div></div></div>
+    </div>
+    <div class="work reveal d2">
+      <div class="work-thumb" style="background:linear-gradient(155deg,#EFEAE0,#DCCFB8)"><div class="work-dia"><svg viewBox="0 0 120 120"><circle cx="38" cy="44" r="17" fill="#C98C7E"/><circle cx="80" cy="35" r="11" fill="#E4C3BB"/><circle cx="86" cy="76" r="15" fill="#D9A79A"/><circle cx="44" cy="84" r="10" fill="#CDBFAB"/><circle cx="63" cy="60" r="8" fill="#C98C7E" opacity="0.55"/></svg></div><span class="work-cat">Range / 対応力</span></div>
+      <div class="work-body"><h4>金融〜エンタメまで多ジャンル</h4>
+        <div class="work-metrics"><div><b>600本+</b>制作実績</div><div><b>全ジャンル</b>対応</div></div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== PORTFOLIO (works gallery) ===== -->
+<style>
+.portfolio{background:var(--cream)}
+.gal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:2.4rem}
+.gal-card{position:relative;aspect-ratio:9/16;border-radius:14px;overflow:hidden;display:block;box-shadow:0 10px 24px -16px rgba(120,92,74,.55);transition:.35s}
+.gal-card img{width:100%;height:100%;object-fit:cover;transition:.4s}
+.gal-card:hover{transform:translateY(-4px);box-shadow:0 18px 38px -18px rgba(120,92,74,.6)}
+.gal-card:hover img{transform:scale(1.06)}
+.gal-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.82);display:flex;align-items:center;justify-content:center;color:var(--rose);font-size:.85rem;z-index:2;box-shadow:0 8px 20px -10px rgba(60,52,47,.5);transition:.35s;opacity:.9}
+.gal-card:hover .gal-play{transform:translate(-50%,-50%) scale(1.14);opacity:1}
+@media(max-width:520px){.gal-grid{grid-template-columns:repeat(2,1fr)}}
+</style>
+<section class="portfolio pad" id="portfolio">
+  <div class="wrap center">
+    <span class="eyebrow reveal">Portfolio</span>
+    <h2 class="sec-title reveal d1">編集<span class="accent">実績</span></h2>
+    <p class="lead reveal d2">制作・運用を担当したアカウントの人気投稿を抜粋。<br>タップすると、それぞれの投稿が開きます。</p>
+  </div>
+  <div class="wrap">
+    <div class="gal-grid">
+      <a class="gal-card reveal" href="https://www.instagram.com/reel/DcdXVPvT9yT/" target="_blank" rel="noopener">
+        <img src="thumbs/ig_DcdXVPvT9yT.jpg" alt="" loading="lazy">
+        <span class="gal-play">▶</span>
+      </a>
+      <a class="gal-card reveal d1" href="https://www.instagram.com/akityaaaan_insta/reel/DcGaD9qolku/" target="_blank" rel="noopener">
+        <img src="thumbs/ig_DcGaD9qolku.jpg" alt="" loading="lazy">
+        <span class="gal-play">▶</span>
+      </a>
+      <a class="gal-card reveal d2" href="https://www.instagram.com/reel/DclUI54pn4q/" target="_blank" rel="noopener">
+        <img src="thumbs/ig_DclUI54pn4q.jpg" alt="" loading="lazy">
+        <span class="gal-play">▶</span>
+      </a>
+      <a class="gal-card reveal" href="https://www.instagram.com/nurse_miya38/reel/DcCqe2OJvrw/" target="_blank" rel="noopener">
+        <img src="thumbs/ig_DcCqe2OJvrw.jpg" alt="" loading="lazy">
+        <span class="gal-play">▶</span>
+      </a>
+      <a class="gal-card reveal d1" href="https://www.instagram.com/reel/DZrpswvxhl_/" target="_blank" rel="noopener">
+        <img src="thumbs/ig_DZrpswvxhl_.jpg" alt="" loading="lazy">
+        <span class="gal-play">▶</span>
+      </a>
+      <a class="gal-card reveal d2" href="https://www.youtube.com/shorts/cmf-1LUJjzI" target="_blank" rel="noopener">
+        <img src="thumbs/sh_cmf-1LUJjzI.jpg" alt="" loading="lazy">
+        <span class="gal-play">▶</span>
+      </a>
+      <a class="gal-card reveal" href="https://www.instagram.com/reel/DaxOeraTebN/" target="_blank" rel="noopener">
+        <img src="thumbs/ig_DaxOeraTebN.jpg" alt="" loading="lazy">
+        <span class="gal-play">▶</span>
+      </a>
+      <a class="gal-card reveal d1" href="https://www.instagram.com/sola_iphoto/reel/Dbc7M2lTAnq/" target="_blank" rel="noopener">
+        <img src="thumbs/ig_Dbc7M2lTAnq.jpg" alt="" loading="lazy">
+        <span class="gal-play">▶</span>
+      </a>
+      <a class="gal-card reveal d2" href="https://www.instagram.com/reel/Dam7KGox_nj/" target="_blank" rel="noopener">
+        <img src="thumbs/ig_Dam7KGox_nj.jpg" alt="" loading="lazy">
+        <span class="gal-play">▶</span>
+      </a>
+      <a class="gal-card reveal" href="https://www.instagram.com/fuji_tesou/reel/DcDxniDRQs6/" target="_blank" rel="noopener">
+        <img src="thumbs/ig_DcDxniDRQs6.jpg" alt="" loading="lazy">
+        <span class="gal-play">▶</span>
+      </a>
+      <a class="gal-card reveal d1" href="https://www.instagram.com/nurse_miya38/reel/DcQXPv_J-Xj/" target="_blank" rel="noopener">
+        <img src="thumbs/ig_DcQXPv_J-Xj.jpg" alt="" loading="lazy">
+        <span class="gal-play">▶</span>
+      </a>
+      <a class="gal-card reveal d2" href="https://www.instagram.com/p/Dbk09oTk0Ee/" target="_blank" rel="noopener">
+        <img src="thumbs/ig_Dbk09oTk0Ee.jpg" alt="" loading="lazy">
+        <span class="gal-play">▶</span>
+      </a>
+      <a class="gal-card reveal" href="https://www.instagram.com/akityaaaan_insta/reel/DcUijb3BVym/" target="_blank" rel="noopener">
+        <img src="thumbs/ig_DcUijb3BVym.jpg" alt="" loading="lazy">
+        <span class="gal-play">▶</span>
+      </a>
+      <a class="gal-card reveal d1" href="https://www.instagram.com/akityaaaan_insta/reel/DcXHTYuh5Z-/" target="_blank" rel="noopener">
+        <img src="thumbs/ig_DcXHTYuh5Z-.jpg" alt="" loading="lazy">
+        <span class="gal-play">▶</span>
+      </a>
+      <a class="gal-card reveal d2" href="https://www.instagram.com/sola_iphoto/reel/DbvDQGDT3P0/" target="_blank" rel="noopener">
+        <img src="thumbs/ig_DbvDQGDT3P0.jpg" alt="" loading="lazy">
+        <span class="gal-play">▶</span>
+      </a>
+      <a class="gal-card reveal" href="https://www.instagram.com/nurse_miya38/reel/DaH2GwrJpet/" target="_blank" rel="noopener">
+        <img src="thumbs/ig_DaH2GwrJpet.jpg" alt="" loading="lazy">
+        <span class="gal-play">▶</span>
+      </a>
+      <a class="gal-card reveal d1" href="https://www.instagram.com/nurse_miya38/reel/DZ7CBhNpW-S/" target="_blank" rel="noopener">
+        <img src="thumbs/ig_DZ7CBhNpW-S.jpg" alt="" loading="lazy">
+        <span class="gal-play">▶</span>
+      </a>
+      <a class="gal-card reveal d2" href="https://www.instagram.com/sola_iphoto/reel/Db73UkCzxXM/" target="_blank" rel="noopener">
+        <img src="thumbs/ig_Db73UkCzxXM.jpg" alt="" loading="lazy">
+        <span class="gal-play">▶</span>
+      </a>
+      <a class="gal-card reveal" href="https://www.youtube.com/shorts/ytmgSEkJOOc" target="_blank" rel="noopener">
+        <img src="thumbs/sh_ytmgSEkJOOc.jpg" alt="" loading="lazy">
+        <span class="gal-play">▶</span>
+      </a>
+      <a class="gal-card reveal d1" href="https://www.instagram.com/sola_iphoto/reel/Dbp9KPzTgyy/" target="_blank" rel="noopener">
+        <img src="thumbs/ig_Dbp9KPzTgyy.jpg" alt="" loading="lazy">
+        <span class="gal-play">▶</span>
+      </a>
+      <a class="gal-card reveal d2" href="https://www.instagram.com/reel/DZ7IbrLxaFd/" target="_blank" rel="noopener">
+        <img src="thumbs/ig_DZ7IbrLxaFd.jpg" alt="" loading="lazy">
+        <span class="gal-play">▶</span>
+      </a>
+      <a class="gal-card reveal" href="https://www.instagram.com/reel/DRRiUG1k07U/" target="_blank" rel="noopener">
+        <img src="thumbs/ig_DRRiUG1k07U.jpg" alt="" loading="lazy">
+        <span class="gal-play">▶</span>
+      </a>
+      <a class="gal-card reveal d1" href="https://www.instagram.com/reel/DVnowEWj6Dq/" target="_blank" rel="noopener">
+        <img src="thumbs/ig_DVnowEWj6Dq.jpg" alt="" loading="lazy">
+        <span class="gal-play">▶</span>
+      </a>
+      <a class="gal-card reveal d2" href="https://www.instagram.com/akityaaaan_insta/reel/Db-m3-eocha/" target="_blank" rel="noopener">
+        <img src="thumbs/ig_Db-m3-eocha.jpg" alt="" loading="lazy">
+        <span class="gal-play">▶</span>
+      </a>
+      <a class="gal-card reveal" href="https://www.youtube.com/shorts/y98r2V6MXog" target="_blank" rel="noopener">
+        <img src="thumbs/sh_y98r2V6MXog.jpg" alt="" loading="lazy">
+        <span class="gal-play">▶</span>
+      </a>
+      <a class="gal-card reveal d1" href="https://www.instagram.com/nurse_miya38/reel/Da-G27XJlWm/" target="_blank" rel="noopener">
+        <img src="thumbs/ig_Da-G27XJlWm.jpg" alt="" loading="lazy">
+        <span class="gal-play">▶</span>
+      </a>
+      <a class="gal-card reveal d2" href="https://www.instagram.com/sola_iphoto/reel/DbIP6NatViB/" target="_blank" rel="noopener">
+        <img src="thumbs/ig_DbIP6NatViB.jpg" alt="" loading="lazy">
+        <span class="gal-play">▶</span>
+      </a>
+      <a class="gal-card reveal" href="https://www.instagram.com/reel/DW8t0RFvnO3/" target="_blank" rel="noopener">
+        <img src="thumbs/ig_DW8t0RFvnO3.jpg" alt="" loading="lazy">
+        <span class="gal-play">▶</span>
+      </a>
+      <a class="gal-card reveal d1" href="https://www.instagram.com/reel/DbfmAe8RNNC/" target="_blank" rel="noopener">
+        <img src="thumbs/ig_DbfmAe8RNNC.jpg" alt="" loading="lazy">
+        <span class="gal-play">▶</span>
+      </a>
+      <a class="gal-card reveal d2" href="https://www.instagram.com/fuji_tesou/reel/DbvO6oep-4l/" target="_blank" rel="noopener">
+        <img src="thumbs/ig_DbvO6oep-4l.jpg" alt="" loading="lazy">
+        <span class="gal-play">▶</span>
+      </a>
+      <a class="gal-card reveal" href="https://www.instagram.com/akityaaaan_insta/reel/Dce412BBOHx/" target="_blank" rel="noopener">
+        <img src="thumbs/ig_Dce412BBOHx.jpg" alt="" loading="lazy">
+        <span class="gal-play">▶</span>
+      </a>
+      <a class="gal-card reveal d1" href="https://www.youtube.com/shorts/E-CR2bQtDto" target="_blank" rel="noopener">
+        <img src="thumbs/sh_E-CR2bQtDto.jpg" alt="" loading="lazy">
+        <span class="gal-play">▶</span>
+      </a>
+      <a class="gal-card reveal d2" href="https://www.youtube.com/shorts/bytrJR4fKqg" target="_blank" rel="noopener">
+        <img src="thumbs/sh_bytrJR4fKqg.jpg" alt="" loading="lazy">
+        <span class="gal-play">▶</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATS ===== -->
+<section class="stats pad">
+  <div class="wrap stat-grid">
+    <div class="stat reveal"><b>156.8<span class="unit">万</span></b><p>支援アカウント総フォロワー</p></div>
+    <div class="stat reveal d1"><b>10<span class="unit">万人</span></b><p>1アカウントの年間フォロワー増</p></div>
+    <div class="stat reveal d2"><b>600<span class="unit">本以上</span></b><p>ショート動画 納品数</p></div>
+    <div class="stat reveal d3"><b>30<span class="unit">以上</span></b><p>対応アカウント数</p></div>
+  </div>
+</section>
+
+<!-- ===== DATA (charts) ===== -->
+<style>
+.data{background:var(--white)}
+.chart-feature{background:var(--cream);border:1px solid var(--line);border-radius:24px;padding:1.9rem 2rem 1.2rem;margin-top:2.6rem;box-shadow:var(--shadow)}
+.cf-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:.4rem;margin-bottom:.6rem}
+.cf-head h3{font-family:var(--serif);font-size:1.18rem;font-weight:500;letter-spacing:.03em}
+.cf-big{font-family:var(--serif);color:var(--rose);font-size:1.7rem;font-weight:600}
+.data-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:1.5rem}
+.chart-card{background:var(--cream);border:1px solid var(--line);border-radius:20px;padding:1.8rem 1.7rem;text-align:center;display:flex;flex-direction:column;align-items:center}
+.chart-card h4{font-family:var(--serif);font-size:1.02rem;font-weight:500;margin-bottom:1.1rem;letter-spacing:.03em}
+.chart-card .cc-note{font-size:.78rem;color:var(--ink-soft);margin-top:1rem;line-height:1.7}
+.barrow{display:flex;flex-direction:column;gap:1.1rem;width:100%;text-align:left;margin-top:.2rem}
+.bar-item .bl{display:flex;justify-content:space-between;align-items:baseline;font-size:.8rem;color:var(--ink-soft);margin-bottom:.45rem}
+.bar-item .bl b{font-family:var(--serif);color:var(--rose);font-size:1.08rem;font-weight:600}
+.bar-track{height:13px;border-radius:99px;background:var(--beige-deep);overflow:hidden}
+.bar-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--rose-soft),var(--rose))}
+@media(max-width:860px){.data-grid{grid-template-columns:1fr}}
+</style>
+<section class="data pad">
+  <div class="wrap center">
+    <span class="eyebrow reveal">Data</span>
+    <h2 class="sec-title reveal d1">数字で見る、<span class="accent">実績</span></h2>
+    <p class="lead reveal d2">成果は、ひと目で伝わる形に。自社アカウントの成長も、数字で証明します。</p>
+  </div>
+  <div class="wrap">
+    <div class="chart-feature reveal">
+      <div class="cf-head">
+        <h3>自社アカウントも、8月下旬に急伸</h3>
+        <div class="cf-big">約1週間で ×2</div>
+      </div>
+      <svg viewBox="0 0 640 275" width="100%" preserveAspectRatio="xMidYMid meet" role="img" aria-label="自社アカウントのフォロワー成長曲線">
+  <defs><linearGradient id="gArea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C98C7E" stop-opacity="0.34"/><stop offset="1" stop-color="#C98C7E" stop-opacity="0.02"/></linearGradient></defs>
+  <line x1="60" y1="240.0" x2="612" y2="240.0" stroke="#E4D8C9" stroke-width="1"/><text x="52" y="244.0" text-anchor="end" font-size="11" fill="#9C9186" style="font-family:'Zen Kaku Gothic New',sans-serif">0</text><line x1="60" y1="148.2" x2="612" y2="148.2" stroke="#E4D8C9" stroke-width="1"/><text x="52" y="152.2" text-anchor="end" font-size="11" fill="#9C9186" style="font-family:'Zen Kaku Gothic New',sans-serif">2,000</text><line x1="60" y1="56.4" x2="612" y2="56.4" stroke="#E4D8C9" stroke-width="1"/><text x="52" y="60.4" text-anchor="end" font-size="11" fill="#9C9186" style="font-family:'Zen Kaku Gothic New',sans-serif">4,000</text><path d="M 60.0,240.0 L 60.0,216.1 L 102.5,208.3 L 144.9,201.0 L 187.4,194.1 L 229.8,186.3 L 272.3,177.6 L 314.8,167.5 L 357.2,157.9 L 399.7,150.1 L 442.2,145.5 L 484.6,139.0 L 527.1,88.6 L 569.5,49.5 L 612.0,30.0 L 612.0,240.0 Z" fill="url(#gArea)"/><path d="M 60.0,216.1 L 102.5,208.3 L 144.9,201.0 L 187.4,194.1 L 229.8,186.3 L 272.3,177.6 L 314.8,167.5 L 357.2,157.9 L 399.7,150.1 L 442.2,145.5 L 484.6,139.0 L 527.1,88.6 L 569.5,49.5 L 612.0,30.0" fill="none" stroke="#C98C7E" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/><circle cx="612.0" cy="30.0" r="5.5" fill="#C98C7E" stroke="#fff" stroke-width="2.5"/><text x="604.0" y="18.0" text-anchor="end" font-size="15" fill="#C98C7E" style="font-family:'Zen Old Mincho',serif;font-weight:600">4,576人</text><text x="60.0" y="258" text-anchor="middle" font-size="11" fill="#9C9186" style="font-family:'Zen Kaku Gothic New',sans-serif">6月</text><text x="484.6" y="258" text-anchor="middle" font-size="11" fill="#9C9186" style="font-family:'Zen Kaku Gothic New',sans-serif">8月下旬</text><text x="612.0" y="258" text-anchor="middle" font-size="11" fill="#9C9186" style="font-family:'Zen Kaku Gothic New',sans-serif">現在</text>
+</svg>
+      <p style="font-size:.8rem;color:var(--ink-soft);margin-top:.4rem">@shina_lifework／8月下旬に約2,000人→4,000人超へ。現在 4,576人（自社運用・実データ）</p>
+    </div>
+    <div class="data-grid">
+      <div class="chart-card reveal">
+        <h4>フォロワー外へのリーチ</h4>
+        <svg viewBox="0 0 180 180" width="150" height="150" style="max-width:150px" role="img" aria-label="フォロワー外83.5%">
+  <circle cx="90" cy="90" r="64" fill="none" stroke="#EADFD1" stroke-width="20"/>
+  <circle cx="90" cy="90" r="64" fill="none" stroke="#C98C7E" stroke-width="20" stroke-linecap="round" stroke-dasharray="335.8 402.1" transform="rotate(-90 90 90)"/>
+  <text x="90" y="86" text-anchor="middle" style="font-family:'Zen Old Mincho',serif;font-weight:600" font-size="30" fill="#463E38">83.5%</text>
+  <text x="90" y="108" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif" font-size="12" fill="#7C726A">フォロワー外</text></svg>
+        <div class="cc-note">表示の83.5%がフォロワー以外へ。<br>自然に新しい層まで届きます。</div>
+      </div>
+      <div class="chart-card reveal d1">
+        <h4>動画の納品実績</h4>
+        <div class="barrow">
+          <div class="bar-item"><div class="bl"><span>ショート動画</span><b>600本以上</b></div><div class="bar-track"><div class="bar-fill" style="width:94%"></div></div></div>
+          <div class="bar-item"><div class="bl"><span>長尺動画（10分以上）</span><b>50本以上</b></div><div class="bar-track"><div class="bar-fill" style="width:42%"></div></div></div>
+        </div>
+        <div class="cc-note">ジャンル：金融系 / Vlog / ビジネス / エンタメ など</div>
+      </div>
+      <div class="chart-card reveal d2">
+        <h4>ストーリーズ平均閲覧率</h4>
+        <div class="barrow">
+          <div class="bar-item"><div class="bl"><span>Scheerの運用</span><b>20%以上</b></div><div class="bar-track"><div class="bar-fill" style="width:80%"></div></div></div>
+          <div class="bar-item"><div class="bl"><span>一般的な優秀ライン</span><b>10%</b></div><div class="bar-track"><div class="bar-fill" style="width:40%;background:#C6B8A4"></div></div></div>
+        </div>
+        <div class="cc-note">優秀とされる10%を、安定して上回ります。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FLOW ===== -->
+<section class="flow pad" id="flow">
+  <div class="wrap center">
+    <span class="eyebrow reveal">Flow</span>
+    <h2 class="sec-title reveal d1">ご依頼の<span class="accent">流れ</span></h2>
+    <p class="lead reveal d2">はじめての方も安心。ヒアリングから納品まで、最後まで伴走します。</p>
+  </div>
+  <div class="wrap flow-list">
+    <div class="flow-item reveal"><div class="flow-num">01</div><div class="flow-body"><h4>お問い合わせ・ご相談</h4><p>フォームからお気軽に。現状のお悩みや叶えたい未来をお聞かせください。無理な勧誘は一切しません。</p></div></div>
+    <div class="flow-item reveal d1"><div class="flow-num">02</div><div class="flow-body"><h4>ヒアリング・ご提案</h4><p>目標やご予算に合わせて、最適なプランと運用方針をご提案。世界観のすり合わせもここで丁寧に。</p></div></div>
+    <div class="flow-item reveal d2"><div class="flow-num">03</div><div class="flow-body"><h4>ご契約・制作スタート</h4><p>内容にご納得いただいてからスタート。初回投稿までスケジュールを引いて進行します。</p></div></div>
+  </div>
+</section>
+
+<!-- ===== VOICE ===== -->
+<section class="voice pad" id="voice">
+  <div class="wrap center">
+    <span class="eyebrow reveal">Strengths</span>
+    <h2 class="sec-title reveal d1">Scheerが<span class="accent">選ばれる理由</span></h2>
+  </div>
+  <div class="wrap voice-grid">
+    <div class="voice-card reveal">
+      <span class="quote">01</span>
+      <p><b>動画編集スキルに長けたチーム。</b><br>「伸びる動画」を知り尽くしたつくり手が集結。ショート〜長尺まで、質の高い動画を安定して生み出します。もちろんアカウント運用・戦略設計まで、一気通貫でお任せいただけます。</p>
+      <div class="voice-who"><div class="voice-ava"></div><div><b>動画クリエイター集団</b><small>制作から運用まで一気通貫</small></div></div>
+    </div>
+    <div class="voice-card reveal d1">
+      <span class="quote">02</span>
+      <p><b>“伸ばす”を、数字で証明する。</b><br>1つのアカウントを、1年間で10万人増。クライアント様の売上も過去最高を更新するなど、結果にこだわって運用します。</p>
+      <div class="voice-who"><div class="voice-ava"></div><div><b>結果を出す力</b><small>1アカウントで年間10万人増</small></div></div>
+    </div>
+    <div class="voice-card reveal d2">
+      <span class="quote">03</span>
+      <p><b>幅広いジャンル × 確かな納品力。</b><br>ショート動画600本以上、長尺動画（10分以上）50本以上の制作実績。金融系・Vlog・ビジネス・エンタメなど、多ジャンルに対応します。</p>
+      <div class="voice-who"><div class="voice-ava"></div><div><b>対応力</b><small>ショート600本・長尺50本以上</small></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq pad" id="faq">
+  <div class="wrap center">
+    <span class="eyebrow reveal">FAQ</span>
+    <h2 class="sec-title reveal d1">よくある<span class="accent">ご質問</span></h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item reveal"><div class="faq-q">写真や素材がなくてもお願いできますか？<span class="mark">＋</span></div><div class="faq-a"><div>はい、大丈夫です。構成やデザインでしっかりカバーします。必要に応じて、撮影のアドバイスや現地での撮影代行などもいたします。</div></div></div>
+    <div class="faq-item reveal"><div class="faq-q">どのくらいの期間からお願いできますか？<span class="mark">＋</span></div><div class="faq-a"><div>基本は3ヶ月〜の伴走をおすすめしていますが、単発の投稿制作やスポット相談も承っています。まずはご相談ください。</div></div></div>
+    <div class="faq-item reveal"><div class="faq-q">料金はどのくらいですか？<span class="mark">＋</span></div><div class="faq-a"><div>ご依頼内容（制作のみ／運用込み など）によって変わります。ヒアリングのうえ、ご予算に合わせたプランをご提案します。</div></div></div>
+    <div class="faq-item reveal"><div class="faq-q">Instagram以外（YouTube・TikTokなど）もお願いできますか？<span class="mark">＋</span></div><div class="faq-a"><div>はい。各種SNS向けの動画制作から運用まで対応しています。アカウントの目的に合わせて、最適なプラットフォームの組み合わせをご提案します。</div></div></div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-sec pad" id="contact">
+  <div class="wrap">
+    <div class="cta-box reveal">
+      <span class="eyebrow">Contact</span>
+      <h2>あなたの発信を、<br>いちばん近くで支えます。</h2>
+      <p>「こんなこと相談していいのかな」も大歓迎。<br>まずは気軽にメッセージを送ってください。</p>
+      <a href="https://line.me/R/ti/p/%40543plmve" target="_blank" rel="noopener" class="btn">公式LINEでお問い合わせ <span class="arw">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-logo">Scheer<small>SNS運用代行</small></div>
+    <div class="foot-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#works">Works</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#voice">Strengths</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="foot-copy">© 2026 Scheer. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+// header scroll
+const header=document.getElementById('header');
+addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>40));
+// burger menu
+const burger=document.getElementById('burger'),menu=document.getElementById('menu');
+burger.addEventListener('click',()=>{burger.classList.toggle('open');menu.classList.toggle('open')});
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{burger.classList.remove('open');menu.classList.remove('open')}));
+// reveal on scroll
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}}),{threshold:.14});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+// faq accordion
+document.querySelectorAll('.faq-item').forEach(item=>{
+  const q=item.querySelector('.faq-q'),a=item.querySelector('.faq-a');
+  q.addEventListener('click',()=>{
+    const open=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-a').style.maxHeight=null});
+    if(!open){item.classList.add('open');a.style.maxHeight=a.scrollHeight+'px'}
+  });
+});
+</script>
+</body>
+</html>

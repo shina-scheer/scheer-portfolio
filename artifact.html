@@ -32,6 +32,9 @@ body{
   letter-spacing:.04em;
   -webkit-font-smoothing:antialiased;
   overflow-x:hidden;
+  word-break:auto-phrase;
+  line-break:strict;
+  text-wrap:pretty;
 }
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
@@ -49,12 +52,10 @@ a{color:inherit;text-decoration:none}
 .sec-title{
   font-family:var(--serif);font-weight:500;
   font-size:clamp(1.7rem,4.2vw,2.5rem);
-  line-height:1.5;letter-spacing:.06em;margin-bottom:1.1rem;
+  line-height:1.5;letter-spacing:.06em;margin-bottom:1.1rem;text-wrap:balance;
 }
 .sec-title .accent{color:var(--rose)}
 .lead{color:var(--ink-soft);font-size:.98rem;max-width:34em}
-/* PC-only line breaks: keep designed breaks on desktop, wrap naturally on phones */
-@media(max-width:640px){br.pcbr{display:none}}
 
 /* ===== header ===== */
 header{
@@ -407,7 +408,7 @@ html:not(.js) .reveal{opacity:1;transform:none;transition:none}
   <div class="wrap center">
     <span class="eyebrow reveal">Works</span>
     <h2 class="sec-title reveal d1">これまでの<span class="accent">制作・運用実績</span></h2>
-    <p class="lead reveal d2">スピードも、バズも、むずかしい投稿でも。<br class="pcbr">数字で語れる成果を、いくつも積み上げてきました。</p>
+    <p class="lead reveal d2">スピードも、バズも、むずかしい投稿でも。数字で語れる成果を、いくつも積み上げてきました。</p>
   </div>
   <div class="wrap work-grid">
     <div class="wk reveal"><span class="wk-ico">↗</span><p>自社アカウントを<b>開始1ヶ月で月間25.7万回再生</b>、表示の<b>83.5%がフォロワー外</b>まで自然に拡散。</p></div>
@@ -435,7 +436,7 @@ html:not(.js) .reveal{opacity:1;transform:none;transition:none}
   <div class="wrap center">
     <span class="eyebrow reveal">Portfolio</span>
     <h2 class="sec-title reveal d1">編集<span class="accent">実績</span></h2>
-    <p class="lead reveal d2">制作・運用を担当したアカウントの人気投稿を抜粋。<br class="pcbr">タップすると、それぞれの投稿が開きます。</p>
+    <p class="lead reveal d2">制作・運用を担当したアカウントの人気投稿を抜粋。タップすると、それぞれの投稿が開きます。</p>
   </div>
   <div class="wrap">
     <div class="gal-grid">
@@ -629,7 +630,7 @@ html:not(.js) .reveal{opacity:1;transform:none;transition:none}
   <circle cx="90" cy="90" r="64" fill="none" stroke="#C98C7E" stroke-width="20" stroke-linecap="round" stroke-dasharray="335.8 402.1" transform="rotate(-90 90 90)"/>
   <text x="90" y="86" text-anchor="middle" style="font-family:'Zen Old Mincho',serif;font-weight:600" font-size="30" fill="#463E38">83.5%</text>
   <text x="90" y="108" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif" font-size="12" fill="#7C726A">フォロワー外</text></svg>
-        <div class="cc-note">表示の83.5%がフォロワー以外へ。<br class="pcbr">自然に新しい層まで届きます。</div>
+        <div class="cc-note">表示の83.5%がフォロワー以外へ。自然に新しい層まで届きます。</div>
       </div>
       <div class="chart-card reveal d1">
         <h4>動画の納品実績</h4>
@@ -710,7 +711,7 @@ html:not(.js) .reveal{opacity:1;transform:none;transition:none}
     <div class="cta-box reveal">
       <span class="eyebrow">Contact</span>
       <h2>あなたの発信を、<br>いちばん近くで支えます。</h2>
-      <p>「こんなこと相談していいのかな」も大歓迎。<br class="pcbr">まずは気軽にメッセージを送ってください。</p>
+      <p>「こんなこと相談していいのかな」も大歓迎。まずは気軽にメッセージを送ってください。</p>
       <a href="https://line.me/R/ti/p/%40543plmve" target="_blank" rel="noopener" class="btn">LINE公式でお問い合わせ <span class="arw">→</span></a>
     </div>
   </div>

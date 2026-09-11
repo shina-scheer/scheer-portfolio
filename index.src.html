@@ -428,13 +428,18 @@ html:not(.js) .reveal{opacity:1;transform:none;transition:none}
 <!-- ===== PORTFOLIO (works gallery) ===== -->
 <style>
 .portfolio{background:var(--cream)}
-.gal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:2.4rem}
-.gal-card{position:relative;aspect-ratio:9/16;border-radius:14px;overflow:hidden;display:block;box-shadow:0 10px 24px -16px rgba(120,92,74,.55);transition:.35s}
-.gal-card img{width:100%;height:100%;object-fit:cover;transition:.4s}
-.gal-card:hover{transform:translateY(-4px);box-shadow:0 18px 38px -18px rgba(120,92,74,.6)}
-.gal-card:hover img{transform:scale(1.06)}
+.gal-sub{font-family:var(--serif);font-size:1.02rem;color:var(--ink);letter-spacing:.05em;margin:2.9rem 0 0;display:flex;align-items:center;gap:.55rem}
+.gal-sub::before{content:"";width:16px;height:2px;background:var(--rose);border-radius:2px}
+.gal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:1.3rem}
+.long-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-top:1.3rem}
+.gal-card,.long-card{position:relative;border-radius:14px;overflow:hidden;display:block;box-shadow:0 10px 24px -16px rgba(120,92,74,.55);transition:.35s}
+.gal-card{aspect-ratio:9/16}
+.long-card{aspect-ratio:16/9}
+.gal-card img,.long-card img{width:100%;height:100%;object-fit:cover;transition:.4s}
+.gal-card:hover,.long-card:hover{transform:translateY(-4px);box-shadow:0 18px 38px -18px rgba(120,92,74,.6)}
+.gal-card:hover img,.long-card:hover img{transform:scale(1.06)}
 .gal-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.82);display:flex;align-items:center;justify-content:center;color:var(--rose);font-size:.85rem;z-index:2;box-shadow:0 8px 20px -10px rgba(60,52,47,.5);transition:.35s;opacity:.9}
-.gal-card:hover .gal-play{transform:translate(-50%,-50%) scale(1.14);opacity:1}
+.gal-card:hover .gal-play,.long-card:hover .gal-play{transform:translate(-50%,-50%) scale(1.14);opacity:1}
 @media(max-width:520px){.gal-grid{grid-template-columns:repeat(2,1fr)}}
 </style>
 <section class="portfolio pad" id="portfolio">
@@ -444,139 +449,47 @@ html:not(.js) .reveal{opacity:1;transform:none;transition:none}
     <p class="lead reveal d2">制作・運用を担当したアカウントの人気投稿を抜粋。タップすると、それぞれの投稿が開きます。</p>
   </div>
   <div class="wrap">
+    <h3 class="gal-sub reveal">ショート動画</h3>
     <div class="gal-grid">
-      <a class="gal-card reveal" href="https://www.instagram.com/reel/DcdXVPvT9yT/" target="_blank" rel="noopener">
-        <img src="thumbs/ig_DcdXVPvT9yT.jpg" alt="" loading="lazy">
-        <span class="gal-play">▶</span>
-      </a>
-      <a class="gal-card reveal d1" href="https://www.instagram.com/akityaaaan_insta/reel/DcGaD9qolku/" target="_blank" rel="noopener">
-        <img src="thumbs/ig_DcGaD9qolku.jpg" alt="" loading="lazy">
-        <span class="gal-play">▶</span>
-      </a>
-      <a class="gal-card reveal d2" href="https://www.instagram.com/reel/DclUI54pn4q/" target="_blank" rel="noopener">
-        <img src="thumbs/ig_DclUI54pn4q.jpg" alt="" loading="lazy">
-        <span class="gal-play">▶</span>
-      </a>
-      <a class="gal-card reveal" href="https://www.instagram.com/nurse_miya38/reel/DcCqe2OJvrw/" target="_blank" rel="noopener">
-        <img src="thumbs/ig_DcCqe2OJvrw.jpg" alt="" loading="lazy">
-        <span class="gal-play">▶</span>
-      </a>
-      <a class="gal-card reveal d1" href="https://www.instagram.com/reel/DZrpswvxhl_/" target="_blank" rel="noopener">
-        <img src="thumbs/ig_DZrpswvxhl_.jpg" alt="" loading="lazy">
-        <span class="gal-play">▶</span>
-      </a>
-      <a class="gal-card reveal d2" href="https://www.youtube.com/shorts/cmf-1LUJjzI" target="_blank" rel="noopener">
-        <img src="thumbs/sh_cmf-1LUJjzI.jpg" alt="" loading="lazy">
-        <span class="gal-play">▶</span>
-      </a>
-      <a class="gal-card reveal" href="https://www.instagram.com/reel/DaxOeraTebN/" target="_blank" rel="noopener">
-        <img src="thumbs/ig_DaxOeraTebN.jpg" alt="" loading="lazy">
-        <span class="gal-play">▶</span>
-      </a>
-      <a class="gal-card reveal d1" href="https://www.instagram.com/sola_iphoto/reel/Dbc7M2lTAnq/" target="_blank" rel="noopener">
-        <img src="thumbs/ig_Dbc7M2lTAnq.jpg" alt="" loading="lazy">
-        <span class="gal-play">▶</span>
-      </a>
-      <a class="gal-card reveal d2" href="https://www.instagram.com/reel/Dam7KGox_nj/" target="_blank" rel="noopener">
-        <img src="thumbs/ig_Dam7KGox_nj.jpg" alt="" loading="lazy">
-        <span class="gal-play">▶</span>
-      </a>
-      <a class="gal-card reveal" href="https://www.instagram.com/fuji_tesou/reel/DcDxniDRQs6/" target="_blank" rel="noopener">
-        <img src="thumbs/ig_DcDxniDRQs6.jpg" alt="" loading="lazy">
-        <span class="gal-play">▶</span>
-      </a>
-      <a class="gal-card reveal d1" href="https://www.instagram.com/nurse_miya38/reel/DcQXPv_J-Xj/" target="_blank" rel="noopener">
-        <img src="thumbs/ig_DcQXPv_J-Xj.jpg" alt="" loading="lazy">
-        <span class="gal-play">▶</span>
-      </a>
-      <a class="gal-card reveal d2" href="https://www.instagram.com/p/Dbk09oTk0Ee/" target="_blank" rel="noopener">
-        <img src="thumbs/ig_Dbk09oTk0Ee.jpg" alt="" loading="lazy">
-        <span class="gal-play">▶</span>
-      </a>
-      <a class="gal-card reveal" href="https://www.instagram.com/akityaaaan_insta/reel/DcUijb3BVym/" target="_blank" rel="noopener">
-        <img src="thumbs/ig_DcUijb3BVym.jpg" alt="" loading="lazy">
-        <span class="gal-play">▶</span>
-      </a>
-      <a class="gal-card reveal d1" href="https://www.instagram.com/akityaaaan_insta/reel/DcXHTYuh5Z-/" target="_blank" rel="noopener">
-        <img src="thumbs/ig_DcXHTYuh5Z-.jpg" alt="" loading="lazy">
-        <span class="gal-play">▶</span>
-      </a>
-      <a class="gal-card reveal d2" href="https://www.instagram.com/sola_iphoto/reel/DbvDQGDT3P0/" target="_blank" rel="noopener">
-        <img src="thumbs/ig_DbvDQGDT3P0.jpg" alt="" loading="lazy">
-        <span class="gal-play">▶</span>
-      </a>
-      <a class="gal-card reveal" href="https://www.instagram.com/nurse_miya38/reel/DaH2GwrJpet/" target="_blank" rel="noopener">
-        <img src="thumbs/ig_DaH2GwrJpet.jpg" alt="" loading="lazy">
-        <span class="gal-play">▶</span>
-      </a>
-      <a class="gal-card reveal d1" href="https://www.instagram.com/nurse_miya38/reel/DZ7CBhNpW-S/" target="_blank" rel="noopener">
-        <img src="thumbs/ig_DZ7CBhNpW-S.jpg" alt="" loading="lazy">
-        <span class="gal-play">▶</span>
-      </a>
-      <a class="gal-card reveal d2" href="https://www.instagram.com/sola_iphoto/reel/Db73UkCzxXM/" target="_blank" rel="noopener">
-        <img src="thumbs/ig_Db73UkCzxXM.jpg" alt="" loading="lazy">
-        <span class="gal-play">▶</span>
-      </a>
-      <a class="gal-card reveal" href="https://www.youtube.com/shorts/ytmgSEkJOOc" target="_blank" rel="noopener">
-        <img src="thumbs/sh_ytmgSEkJOOc.jpg" alt="" loading="lazy">
-        <span class="gal-play">▶</span>
-      </a>
-      <a class="gal-card reveal d1" href="https://www.instagram.com/sola_iphoto/reel/Dbp9KPzTgyy/" target="_blank" rel="noopener">
-        <img src="thumbs/ig_Dbp9KPzTgyy.jpg" alt="" loading="lazy">
-        <span class="gal-play">▶</span>
-      </a>
-      <a class="gal-card reveal d2" href="https://www.instagram.com/reel/DZ7IbrLxaFd/" target="_blank" rel="noopener">
-        <img src="thumbs/ig_DZ7IbrLxaFd.jpg" alt="" loading="lazy">
-        <span class="gal-play">▶</span>
-      </a>
-      <a class="gal-card reveal" href="https://www.instagram.com/reel/DRRiUG1k07U/" target="_blank" rel="noopener">
-        <img src="thumbs/ig_DRRiUG1k07U.jpg" alt="" loading="lazy">
-        <span class="gal-play">▶</span>
-      </a>
-      <a class="gal-card reveal d1" href="https://www.instagram.com/reel/DVnowEWj6Dq/" target="_blank" rel="noopener">
-        <img src="thumbs/ig_DVnowEWj6Dq.jpg" alt="" loading="lazy">
-        <span class="gal-play">▶</span>
-      </a>
-      <a class="gal-card reveal d2" href="https://www.instagram.com/akityaaaan_insta/reel/Db-m3-eocha/" target="_blank" rel="noopener">
-        <img src="thumbs/ig_Db-m3-eocha.jpg" alt="" loading="lazy">
-        <span class="gal-play">▶</span>
-      </a>
-      <a class="gal-card reveal" href="https://www.youtube.com/shorts/y98r2V6MXog" target="_blank" rel="noopener">
-        <img src="thumbs/sh_y98r2V6MXog.jpg" alt="" loading="lazy">
-        <span class="gal-play">▶</span>
-      </a>
-      <a class="gal-card reveal d1" href="https://www.instagram.com/nurse_miya38/reel/Da-G27XJlWm/" target="_blank" rel="noopener">
-        <img src="thumbs/ig_Da-G27XJlWm.jpg" alt="" loading="lazy">
-        <span class="gal-play">▶</span>
-      </a>
-      <a class="gal-card reveal d2" href="https://www.instagram.com/sola_iphoto/reel/DbIP6NatViB/" target="_blank" rel="noopener">
-        <img src="thumbs/ig_DbIP6NatViB.jpg" alt="" loading="lazy">
-        <span class="gal-play">▶</span>
-      </a>
-      <a class="gal-card reveal" href="https://www.instagram.com/reel/DW8t0RFvnO3/" target="_blank" rel="noopener">
-        <img src="thumbs/ig_DW8t0RFvnO3.jpg" alt="" loading="lazy">
-        <span class="gal-play">▶</span>
-      </a>
-      <a class="gal-card reveal d1" href="https://www.instagram.com/reel/DbfmAe8RNNC/" target="_blank" rel="noopener">
-        <img src="thumbs/ig_DbfmAe8RNNC.jpg" alt="" loading="lazy">
-        <span class="gal-play">▶</span>
-      </a>
-      <a class="gal-card reveal d2" href="https://www.instagram.com/fuji_tesou/reel/DbvO6oep-4l/" target="_blank" rel="noopener">
-        <img src="thumbs/ig_DbvO6oep-4l.jpg" alt="" loading="lazy">
-        <span class="gal-play">▶</span>
-      </a>
-      <a class="gal-card reveal" href="https://www.instagram.com/akityaaaan_insta/reel/Dce412BBOHx/" target="_blank" rel="noopener">
-        <img src="thumbs/ig_Dce412BBOHx.jpg" alt="" loading="lazy">
-        <span class="gal-play">▶</span>
-      </a>
-      <a class="gal-card reveal d1" href="https://www.youtube.com/shorts/E-CR2bQtDto" target="_blank" rel="noopener">
-        <img src="thumbs/sh_E-CR2bQtDto.jpg" alt="" loading="lazy">
-        <span class="gal-play">▶</span>
-      </a>
-      <a class="gal-card reveal d2" href="https://www.youtube.com/shorts/bytrJR4fKqg" target="_blank" rel="noopener">
-        <img src="thumbs/sh_bytrJR4fKqg.jpg" alt="" loading="lazy">
-        <span class="gal-play">▶</span>
-      </a>
+      <a class="gal-card reveal" href="https://www.instagram.com/reel/DcdXVPvT9yT/" target="_blank" rel="noopener"><img src="thumbs/ig_DcdXVPvT9yT.jpg" alt="" loading="lazy"><span class="gal-play">▶</span></a>
+      <a class="gal-card reveal d1" href="https://www.instagram.com/akityaaaan_insta/reel/DcGaD9qolku/" target="_blank" rel="noopener"><img src="thumbs/ig_DcGaD9qolku.jpg" alt="" loading="lazy"><span class="gal-play">▶</span></a>
+      <a class="gal-card reveal d2" href="https://www.instagram.com/reel/DclUI54pn4q/" target="_blank" rel="noopener"><img src="thumbs/ig_DclUI54pn4q.jpg" alt="" loading="lazy"><span class="gal-play">▶</span></a>
+      <a class="gal-card reveal" href="https://www.instagram.com/nurse_miya38/reel/DcCqe2OJvrw/" target="_blank" rel="noopener"><img src="thumbs/ig_DcCqe2OJvrw.jpg" alt="" loading="lazy"><span class="gal-play">▶</span></a>
+      <a class="gal-card reveal d1" href="https://www.instagram.com/reel/DZrpswvxhl_/" target="_blank" rel="noopener"><img src="thumbs/ig_DZrpswvxhl_.jpg" alt="" loading="lazy"><span class="gal-play">▶</span></a>
+      <a class="gal-card reveal d2" href="https://www.youtube.com/shorts/cmf-1LUJjzI" target="_blank" rel="noopener"><img src="thumbs/sh_cmf-1LUJjzI.jpg" alt="" loading="lazy"><span class="gal-play">▶</span></a>
+      <a class="gal-card reveal" href="https://www.instagram.com/reel/DaxOeraTebN/" target="_blank" rel="noopener"><img src="thumbs/ig_DaxOeraTebN.jpg" alt="" loading="lazy"><span class="gal-play">▶</span></a>
+      <a class="gal-card reveal d1" href="https://www.instagram.com/sola_iphoto/reel/Dbc7M2lTAnq/" target="_blank" rel="noopener"><img src="thumbs/ig_Dbc7M2lTAnq.jpg" alt="" loading="lazy"><span class="gal-play">▶</span></a>
+      <a class="gal-card reveal d2" href="https://www.instagram.com/reel/Dam7KGox_nj/" target="_blank" rel="noopener"><img src="thumbs/ig_Dam7KGox_nj.jpg" alt="" loading="lazy"><span class="gal-play">▶</span></a>
+      <a class="gal-card reveal" href="https://www.instagram.com/fuji_tesou/reel/DcDxniDRQs6/" target="_blank" rel="noopener"><img src="thumbs/ig_DcDxniDRQs6.jpg" alt="" loading="lazy"><span class="gal-play">▶</span></a>
+      <a class="gal-card reveal d1" href="https://www.instagram.com/nurse_miya38/reel/DcQXPv_J-Xj/" target="_blank" rel="noopener"><img src="thumbs/ig_DcQXPv_J-Xj.jpg" alt="" loading="lazy"><span class="gal-play">▶</span></a>
+      <a class="gal-card reveal d2" href="https://www.instagram.com/p/Dbk09oTk0Ee/" target="_blank" rel="noopener"><img src="thumbs/ig_Dbk09oTk0Ee.jpg" alt="" loading="lazy"><span class="gal-play">▶</span></a>
+      <a class="gal-card reveal" href="https://www.instagram.com/akityaaaan_insta/reel/DcUijb3BVym/" target="_blank" rel="noopener"><img src="thumbs/ig_DcUijb3BVym.jpg" alt="" loading="lazy"><span class="gal-play">▶</span></a>
+      <a class="gal-card reveal d1" href="https://www.instagram.com/akityaaaan_insta/reel/DcXHTYuh5Z-/" target="_blank" rel="noopener"><img src="thumbs/ig_DcXHTYuh5Z-.jpg" alt="" loading="lazy"><span class="gal-play">▶</span></a>
+      <a class="gal-card reveal d2" href="https://www.instagram.com/sola_iphoto/reel/DbvDQGDT3P0/" target="_blank" rel="noopener"><img src="thumbs/ig_DbvDQGDT3P0.jpg" alt="" loading="lazy"><span class="gal-play">▶</span></a>
+      <a class="gal-card reveal" href="https://www.instagram.com/nurse_miya38/reel/DaH2GwrJpet/" target="_blank" rel="noopener"><img src="thumbs/ig_DaH2GwrJpet.jpg" alt="" loading="lazy"><span class="gal-play">▶</span></a>
+      <a class="gal-card reveal d1" href="https://www.instagram.com/nurse_miya38/reel/DZ7CBhNpW-S/" target="_blank" rel="noopener"><img src="thumbs/ig_DZ7CBhNpW-S.jpg" alt="" loading="lazy"><span class="gal-play">▶</span></a>
+      <a class="gal-card reveal d2" href="https://www.instagram.com/sola_iphoto/reel/Db73UkCzxXM/" target="_blank" rel="noopener"><img src="thumbs/ig_Db73UkCzxXM.jpg" alt="" loading="lazy"><span class="gal-play">▶</span></a>
+      <a class="gal-card reveal" href="https://www.youtube.com/shorts/ytmgSEkJOOc" target="_blank" rel="noopener"><img src="thumbs/sh_ytmgSEkJOOc.jpg" alt="" loading="lazy"><span class="gal-play">▶</span></a>
+      <a class="gal-card reveal d1" href="https://www.instagram.com/sola_iphoto/reel/Dbp9KPzTgyy/" target="_blank" rel="noopener"><img src="thumbs/ig_Dbp9KPzTgyy.jpg" alt="" loading="lazy"><span class="gal-play">▶</span></a>
+      <a class="gal-card reveal d2" href="https://www.instagram.com/reel/DZ7IbrLxaFd/" target="_blank" rel="noopener"><img src="thumbs/ig_DZ7IbrLxaFd.jpg" alt="" loading="lazy"><span class="gal-play">▶</span></a>
+      <a class="gal-card reveal" href="https://www.instagram.com/reel/DRRiUG1k07U/" target="_blank" rel="noopener"><img src="thumbs/ig_DRRiUG1k07U.jpg" alt="" loading="lazy"><span class="gal-play">▶</span></a>
+      <a class="gal-card reveal d1" href="https://www.instagram.com/reel/DVnowEWj6Dq/" target="_blank" rel="noopener"><img src="thumbs/ig_DVnowEWj6Dq.jpg" alt="" loading="lazy"><span class="gal-play">▶</span></a>
+      <a class="gal-card reveal d2" href="https://www.instagram.com/akityaaaan_insta/reel/Db-m3-eocha/" target="_blank" rel="noopener"><img src="thumbs/ig_Db-m3-eocha.jpg" alt="" loading="lazy"><span class="gal-play">▶</span></a>
+      <a class="gal-card reveal" href="https://www.youtube.com/shorts/y98r2V6MXog" target="_blank" rel="noopener"><img src="thumbs/sh_y98r2V6MXog.jpg" alt="" loading="lazy"><span class="gal-play">▶</span></a>
+      <a class="gal-card reveal d1" href="https://www.instagram.com/nurse_miya38/reel/Da-G27XJlWm/" target="_blank" rel="noopener"><img src="thumbs/ig_Da-G27XJlWm.jpg" alt="" loading="lazy"><span class="gal-play">▶</span></a>
+      <a class="gal-card reveal d2" href="https://www.instagram.com/sola_iphoto/reel/DbIP6NatViB/" target="_blank" rel="noopener"><img src="thumbs/ig_DbIP6NatViB.jpg" alt="" loading="lazy"><span class="gal-play">▶</span></a>
+      <a class="gal-card reveal" href="https://www.instagram.com/reel/DW8t0RFvnO3/" target="_blank" rel="noopener"><img src="thumbs/ig_DW8t0RFvnO3.jpg" alt="" loading="lazy"><span class="gal-play">▶</span></a>
+      <a class="gal-card reveal d1" href="https://www.instagram.com/reel/DbfmAe8RNNC/" target="_blank" rel="noopener"><img src="thumbs/ig_DbfmAe8RNNC.jpg" alt="" loading="lazy"><span class="gal-play">▶</span></a>
+      <a class="gal-card reveal d2" href="https://www.instagram.com/fuji_tesou/reel/DbvO6oep-4l/" target="_blank" rel="noopener"><img src="thumbs/ig_DbvO6oep-4l.jpg" alt="" loading="lazy"><span class="gal-play">▶</span></a>
+      <a class="gal-card reveal" href="https://www.instagram.com/akityaaaan_insta/reel/Dce412BBOHx/" target="_blank" rel="noopener"><img src="thumbs/ig_Dce412BBOHx.jpg" alt="" loading="lazy"><span class="gal-play">▶</span></a>
+      <a class="gal-card reveal d1" href="https://www.youtube.com/shorts/E-CR2bQtDto" target="_blank" rel="noopener"><img src="thumbs/sh_E-CR2bQtDto.jpg" alt="" loading="lazy"><span class="gal-play">▶</span></a>
+      <a class="gal-card reveal d2" href="https://www.youtube.com/shorts/bytrJR4fKqg" target="_blank" rel="noopener"><img src="thumbs/sh_bytrJR4fKqg.jpg" alt="" loading="lazy"><span class="gal-play">▶</span></a>
+    </div>
+    <h3 class="gal-sub reveal">長尺動画</h3>
+    <div class="long-grid">
+      <a class="long-card reveal" href="https://www.youtube.com/watch?v=7LXDC9dep-M" target="_blank" rel="noopener"><img src="thumbs/lg_7LXDC9dep-M.jpg" alt="" loading="lazy"><span class="gal-play">▶</span></a>
+      <a class="long-card reveal d1" href="https://www.youtube.com/watch?v=2XFyTRcl9Ho" target="_blank" rel="noopener"><img src="thumbs/lg_2XFyTRcl9Ho.jpg" alt="" loading="lazy"><span class="gal-play">▶</span></a>
+      <a class="long-card reveal d2" href="https://www.youtube.com/watch?v=XXB70RDFtIU" target="_blank" rel="noopener"><img src="thumbs/lg_XXB70RDFtIU.jpg" alt="" loading="lazy"><span class="gal-play">▶</span></a>
     </div>
   </div>
 </section>

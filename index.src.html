@@ -238,6 +238,26 @@ section{position:relative}
 .voice-ava{width:42px;height:42px;border-radius:50%;background:linear-gradient(140deg,var(--rose-soft),var(--beige-deep))}
 .voice-who b{font-size:.82rem;font-weight:500;display:block}
 .voice-who small{font-size:.72rem;color:var(--ink-soft)}
+/* customer voice (testimonials) */
+.cvoice{background:linear-gradient(180deg,var(--beige) 0%,var(--cream) 40%)}
+.cv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.6rem;margin-top:3rem}
+.cv-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:2.3rem 2rem 2rem;position:relative;overflow:hidden;box-shadow:var(--shadow)}
+.cv-no{position:absolute;top:1.1rem;right:1.5rem;font-family:var(--script);font-style:italic;color:var(--rose-soft);font-size:1.05rem;line-height:1;text-align:right}
+.cv-no b{display:block;font-size:2.1rem;font-weight:500;margin-top:-.15em}
+.cv-head{display:flex;align-items:center;gap:.9rem;margin-bottom:1.1rem;padding-right:3.4rem}
+.cv-ava{width:58px;height:58px;border-radius:50%;flex:none;background:linear-gradient(140deg,var(--rose-soft),var(--beige-deep));display:flex;align-items:center;justify-content:center;font-family:var(--serif);color:#fff;font-size:1.5rem;overflow:hidden}
+.cv-ava img{width:100%;height:100%;object-fit:cover}
+.cv-ava.anon{background:linear-gradient(140deg,var(--beige-deep),var(--rose-pale));color:var(--rose);font-family:var(--script);font-style:italic;font-size:2rem}
+.cv-badge{display:inline-block;background:var(--rose);color:#fff;font-size:.64rem;letter-spacing:.04em;padding:.3em .72em;border-radius:999px;margin-bottom:.35rem}
+.cv-name{font-family:var(--serif);font-size:1.08rem;letter-spacing:.03em;line-height:1.35}
+.cv-handle{font-family:var(--script);font-style:italic;font-size:.74rem;color:var(--ink-soft);letter-spacing:.03em}
+.cv-genre{font-size:.7rem;color:var(--rose);margin-top:.18rem;letter-spacing:.02em}
+.cv-hl{font-family:var(--serif);color:var(--ink);font-size:1.12rem;line-height:1.75;font-weight:700;margin:.2rem 0 1rem;letter-spacing:.02em}
+.cv-hl .u{background:linear-gradient(transparent 62%,var(--rose-pale) 62%);padding:0 .05em}
+.cv-body{color:var(--ink-soft);font-size:.85rem;line-height:1.9}
+.cv-body p{margin-bottom:.55rem}
+.cv-body u{text-decoration:none;border-bottom:2px solid var(--rose-soft);padding-bottom:1px;font-weight:500;color:var(--ink)}
+@media(max-width:720px){.cv-grid{grid-template-columns:1fr}}
 
 /* ===== faq ===== */
 .faq{background:var(--beige)}
@@ -323,6 +343,7 @@ html:not(.js) .reveal{opacity:1;transform:none;transition:none}
       <a href="#works">Works</a>
       <a href="#portfolio">Portfolio</a>
       <a href="#voice">Strengths</a>
+      <a href="#customer-voice">Voice</a>
       <a href="#faq">FAQ</a>
       <a href="#contact" class="cta">お問い合わせ</a>
     </nav>
@@ -609,6 +630,142 @@ html:not(.js) .reveal{opacity:1;transform:none;transition:none}
   </div>
 </section>
 
+<!-- ===== CUSTOMER VOICE ===== -->
+<section class="cvoice pad" id="customer-voice">
+  <div class="wrap center">
+    <span class="eyebrow reveal">Voice</span>
+    <h2 class="sec-title reveal d1">お客様の<span class="accent">声</span></h2>
+    <p class="lead reveal d2" style="margin-inline:auto;text-align:center">実際にご依頼いただいているクライアント様から届いた、ありのままの声です。</p>
+  </div>
+  <div class="wrap cv-grid">
+
+    <div class="cv-card reveal">
+      <span class="cv-no">Voice<b>1</b></span>
+      <div class="cv-head">
+        <div class="cv-ava"><img src="images/cv_chiharuta.jpg" alt="ちはるた"></div>
+        <div>
+          <span class="cv-badge">YouTube 登録者 1.8万</span>
+          <div class="cv-name">ちはるた</div>
+          <div class="cv-handle">@chiharuta_money</div>
+          <div class="cv-genre">お金・家計｜動画編集・ディレクション</div>
+        </div>
+      </div>
+      <p class="cv-hl">編集に追われていた時間を、<span class="u">新しい事業に回せました</span>。</p>
+      <div class="cv-body">
+        <p>決め手は対応スピードの速さと、気配りが効くところ。ディレクターのクライアントが増えると、自分のアカウントへのコミットが減るのを懸念していました。</p>
+        <p>連絡への反応が早く、お願いしたら<u>すぐ改善をかけてくれる</u>。台本作成以外はすべてお任せしているので、作業時間をうかせて自分の新しい事業に時間を使えています。</p>
+      </div>
+    </div>
+
+    <div class="cv-card reveal d1">
+      <span class="cv-no">Voice<b>2</b></span>
+      <div class="cv-head">
+        <div class="cv-ava"><img src="images/cv_fuji.jpg" alt="手相鑑定士ふじ"></div>
+        <div>
+          <span class="cv-badge">Instagram 8,660</span>
+          <div class="cv-name">手相鑑定士ふじ</div>
+          <div class="cv-handle">@fuji_tesou</div>
+          <div class="cv-genre">手相鑑定｜動画編集</div>
+        </div>
+      </div>
+      <p class="cv-hl">投稿したら、<span class="u">24時間で2万再生</span>を超えました。</p>
+      <div class="cv-body">
+        <p>動画編集はいつも<u>納期よりかなり早く納品</u>してくださり、フロント発信を止めずに運用できています。本当にお願いしてよかったです。</p>
+        <p>本来やりたかった鑑定や講座準備に使える時間が増えました。こちらの記載ミスにも細やかに確認してくださる丁寧さに助けられています。</p>
+      </div>
+    </div>
+
+    <div class="cv-card reveal">
+      <span class="cv-no">Voice<b>3</b></span>
+      <div class="cv-head">
+        <div class="cv-ava anon"><svg viewBox="0 0 64 64" width="66%" height="66%" aria-hidden="true"><g fill="#C98C7E"><path d="M32 11c-7.7 0-12.5 5.6-12.5 14.5 0 4.8 1.6 8.4 1.6 12.5h3.4c-.9-2.8-1.5-5.6-1.5-9.5 0-5.6 3.6-9.5 9-9.5s9 3.9 9 9.5c0 3.9-.6 6.7-1.5 9.5h3.4c0-4.1 1.6-7.7 1.6-12.5C44.5 16.6 39.7 11 32 11z"/><circle cx="32" cy="27.5" r="7.6"/><path d="M18 57c0-8.6 6.6-13.5 14-13.5S46 48.4 46 57z"/></g></svg></div>
+        <div>
+          <div class="cv-name">推し活アカウント</div>
+          <div class="cv-genre">推し活｜ディレクション</div>
+        </div>
+      </div>
+      <p class="cv-hl">一人では回らないことも、<span class="u">今は回っています</span>。</p>
+      <div class="cv-body">
+        <p>楽天を一人でやっていて、投稿作成やストーリー作成に追われパンク状態でした。今は投稿をほぼお任せでき、私はストーリー作成や他案件に集中できています。</p>
+        <p>とにかくレスポンスが早い。<u>お願いしたこと以上の内容で返ってくる</u>ことも多く、私にとって<u>居ないと困る存在</u>です。</p>
+      </div>
+    </div>
+
+    <div class="cv-card reveal d1">
+      <span class="cv-no">Voice<b>4</b></span>
+      <div class="cv-head">
+        <div class="cv-ava"><img src="images/cv_miya.jpg" alt="看護師みや"></div>
+        <div>
+          <span class="cv-badge">Instagram 12.6万</span>
+          <div class="cv-name">看護師みや</div>
+          <div class="cv-handle">@nurse_miya38</div>
+          <div class="cv-genre">看護師｜動画編集・ディレクション</div>
+        </div>
+      </div>
+      <p class="cv-hl">たった<span class="u">3投稿で約4,000人</span>増加。200万回再生のリールも。</p>
+      <div class="cv-body">
+        <p>質の高いリールを頻度高く投稿できるようになり、<u>フォロワーは3万人以上増加</u>。直近は3投稿で約4,000人増え、一緒に考えた新しい構成がハマって200万回以上再生されたリールもありました。</p>
+        <p>大雑把な指示でも<u>クオリティの高い動画に仕上げて</u>くださり、納期より前にスピード感早く出してくれて助かりました。チームが回るための提案もしてくださいます。</p>
+      </div>
+    </div>
+
+    <div class="cv-card reveal">
+      <span class="cv-no">Voice<b>5</b></span>
+      <div class="cv-head">
+        <div class="cv-ava"><img src="images/cv_sora.jpg" alt="そら"></div>
+        <div>
+          <span class="cv-badge">Instagram 7.6万</span>
+          <div class="cv-name">そら</div>
+          <div class="cv-handle">@sola_iphoto</div>
+          <div class="cv-genre">iPhoneカメラ発信｜投稿作成</div>
+        </div>
+      </div>
+      <p class="cv-hl">修正もほとんどなく、<span class="u">他の業務に集中できる</span>。</p>
+      <div class="cv-body">
+        <p>投稿作成の負担が減っただけでなく、<u>修正もほとんどかからない</u>ので、他の業務に集中できるようになりました。</p>
+        <p>いつもレスポンスが早く提案力もあり、連絡も丁寧。しなさんが入ってくださって本当によかったです。</p>
+      </div>
+    </div>
+
+    <div class="cv-card reveal d1">
+      <span class="cv-no">Voice<b>6</b></span>
+      <div class="cv-head">
+        <div class="cv-ava"><img src="images/cv_aki.jpg" alt="あき"></div>
+        <div>
+          <span class="cv-badge">Instagram 1.7万</span>
+          <div class="cv-name">あき｜インスタで人生に自由を</div>
+          <div class="cv-handle">@akityaaaan_insta</div>
+          <div class="cv-genre">インスタ発信｜動画編集</div>
+        </div>
+      </div>
+      <p class="cv-hl">“今したい”にすぐ返ってくる、<span class="u">レスの速さ</span>。</p>
+      <div class="cv-body">
+        <p>リールのクオリティが担保できているのはもちろん、ディレクションもしていただいているので、自分の時間ができました。</p>
+        <p>とにかくレスポンスが早い。<u>1日空くことは絶対にない</u>ので助かっています。レスが遅れる日も事前に伝えてくれます。</p>
+      </div>
+    </div>
+
+    <div class="cv-card reveal">
+      <span class="cv-no">Voice<b>7</b></span>
+      <div class="cv-head">
+        <div class="cv-ava"><img src="images/cv_riko.jpg" alt="りこ"></div>
+        <div>
+          <span class="cv-badge">Instagram 4.2万</span>
+          <div class="cv-name">りこ</div>
+          <div class="cv-handle">@riko_patissiere</div>
+          <div class="cv-genre">お菓子・レッスン発信｜動画編集</div>
+        </div>
+      </div>
+      <p class="cv-hl">毎日の編集時間を、<span class="u">生徒さんとの時間に</span>回せました。</p>
+      <div class="cv-body">
+        <p>決め手は完全に信頼関係。任せても大丈夫という安心感でした。<u>納期もレスポンスも早く</u>、やり取りがスムーズです。</p>
+        <p>全部確認して、<u>一人ひとりに合わせた編集</u>で納品してくれます。ほぼ毎日していた編集の時間を、自社商品の準備やDM返信・生徒さんのレッスンに充てられるようになりました。</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- ===== FAQ ===== -->
 <section class="faq pad" id="faq">
   <div class="wrap center">
@@ -645,6 +802,7 @@ html:not(.js) .reveal{opacity:1;transform:none;transition:none}
       <a href="#works">Works</a>
       <a href="#portfolio">Portfolio</a>
       <a href="#voice">Strengths</a>
+      <a href="#customer-voice">Voice</a>
       <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
     </div>

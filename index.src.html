@@ -7,23 +7,24 @@
 <meta name="description" content="発信をあきらめない人のためのSNS運用代行 Scheer。Instagram・YouTube・TikTokの投稿制作から運用まで、世界観を大切に丁寧に。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --cream:#FBF7F1;
-  --beige:#F3EBE1;
-  --beige-deep:#EADFD1;
-  --rose:#C98C7E;
-  --rose-soft:#E4C3BB;
-  --rose-pale:#F5E4DF;
-  --sage:#A9B0A0;
-  --ink:#463E38;
-  --ink-soft:#7C726A;
-  --line:#E4D8C9;
+  --cream:#F6EDEA;
+  --beige:#F0DBD1;
+  --beige-deep:#E6C2BB;
+  --rose:#D293A0;
+  --rose-soft:#ECC8CB;
+  --rose-pale:#F6E4E4;
+  --sage:#D293A0;
+  --ink:#3A3330;
+  --ink-soft:#6E645F;
+  --line:#EDDDD8;
   --white:#FFFFFF;
-  --serif:'Zen Old Mincho',serif;
+  --serif:'Zen Kaku Gothic New',sans-serif;
   --gothic:'Zen Kaku Gothic New',sans-serif;
-  --script:'Cormorant Garamond',serif;
+  --script:'Zen Kaku Gothic New',sans-serif;
+  --hand:'Cormorant Garamond',serif;
   --shadow:0 18px 50px -24px rgba(120,92,74,.35);
 }
 *{margin:0;padding:0;box-sizing:border-box}
@@ -31,7 +32,8 @@ html{scroll-behavior:smooth;scroll-padding-top:84px}
 body{
   font-family:var(--gothic);
   color:var(--ink);
-  background:var(--cream);
+  background:linear-gradient(180deg,#F8EFEC 0%,#F4E3DE 38%,#F0D9D3 64%,#F7EBE7 100%) no-repeat;
+  background-size:100% 100%;
   line-height:1.9;
   font-weight:400;
   letter-spacing:.04em;
@@ -44,18 +46,18 @@ body{
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 .wrap{width:min(1080px,90%);margin-inline:auto}
-.en{font-family:var(--script);font-style:italic;letter-spacing:.06em}
+.en{font-family:var(--script);font-style:normal;letter-spacing:.06em}
 
 /* ===== decorative label ===== */
 .eyebrow{
   display:inline-flex;align-items:center;gap:.6em;
-  font-family:var(--script);font-style:italic;
+  font-family:var(--script);font-style:normal;
   font-size:1.15rem;color:var(--rose);letter-spacing:.08em;
   margin-bottom:.9rem;
 }
 .eyebrow::before{content:"";width:34px;height:1px;background:var(--rose-soft)}
 .sec-title{
-  font-family:var(--serif);font-weight:500;
+  font-family:var(--serif);font-weight:600;
   font-size:clamp(1.7rem,4.2vw,2.5rem);
   line-height:1.5;letter-spacing:.06em;margin-bottom:1.1rem;text-wrap:balance;
 }
@@ -75,7 +77,7 @@ header.scrolled{
 }
 .nav{display:flex;align-items:center;justify-content:space-between}
 .logo{font-family:var(--serif);font-size:1.35rem;letter-spacing:.14em;font-weight:600}
-.logo small{font-family:var(--script);font-style:italic;font-size:.72rem;display:block;color:var(--rose);letter-spacing:.1em;font-weight:500;margin-top:-2px}
+.logo small{font-family:var(--script);font-style:normal;font-size:.72rem;display:block;color:var(--rose);letter-spacing:.1em;font-weight:500;margin-top:-2px}
 .menu{display:flex;gap:2rem;align-items:center;font-size:.82rem;letter-spacing:.1em}
 .menu a{position:relative;color:var(--ink-soft);transition:.3s}
 .menu a::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:1px;background:var(--rose);transition:.3s}
@@ -103,22 +105,25 @@ header.scrolled{
   border-radius:50%;z-index:0;animation:float 18s ease-in-out infinite reverse;
 }
 @keyframes float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-26px) rotate(8deg)}}
-.hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:center}
-.hero-copy h1{
-  font-family:var(--serif);font-weight:500;
-  font-size:clamp(2rem,5.6vw,3.5rem);line-height:1.55;letter-spacing:.04em;
-  margin-bottom:1.4rem;
-}
-.hero-copy h1 .accent{color:var(--rose)}
-.hero-copy h1 .thin{font-size:.62em;display:block;color:var(--ink-soft);letter-spacing:.1em;margin-top:.5em;font-weight:400}
-.hero-copy p{color:var(--ink-soft);font-size:.98rem;margin-bottom:2.2rem;max-width:26em}
-.hero-tag{font-family:var(--script);font-style:italic;color:var(--rose);font-size:1.3rem;margin-bottom:1rem;display:block}
+.hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:center}
+.hero-copy{position:relative}
+.hero-copy::before{content:none}
+.hero-copy>*{position:relative;z-index:1}
+.hero-tag{font-family:var(--script);font-style:normal;color:var(--rose);font-size:1.15rem;letter-spacing:.12em;margin-bottom:1rem;display:block}
+.hero-copy h1{font-family:var(--gothic);margin-bottom:1.1rem}
+.hero-copy h1 .l1{display:block;font-weight:700;font-size:clamp(1.95rem,5.2vw,3.1rem);line-height:1.45;letter-spacing:.02em;color:var(--ink);word-break:auto-phrase;line-break:strict;text-wrap:pretty}
+.hero-copy h1 .l1 .accent{background:linear-gradient(transparent 56%,rgba(210,147,160,.55) 56%);padding:0 .06em}
+.pcbr{display:inline}
+@media(max-width:820px){.pcbr{display:none}}
+.hero-copy h1 .l2{display:block;font-weight:500;font-size:clamp(1.4rem,3.5vw,2.1rem);line-height:1.5;letter-spacing:.03em;color:var(--ink);margin-top:.45em;word-break:auto-phrase;line-break:strict;text-wrap:pretty}
+.hero-sub{font-family:var(--gothic);font-weight:500;color:var(--ink);font-size:clamp(1rem,2.2vw,1.22rem);letter-spacing:.05em;margin-bottom:1.6rem;word-break:auto-phrase;line-break:strict}
+.hero-copy p{font-family:var(--gothic);color:var(--ink-soft);font-size:.95rem;line-height:2;margin-bottom:2.2rem;max-width:23em;word-break:auto-phrase;line-break:strict;text-wrap:pretty}
 .btn{
   display:inline-flex;align-items:center;gap:.7em;
-  background:var(--ink);color:#fff;padding:.95em 2.2em;border-radius:999px;
-  font-size:.86rem;letter-spacing:.1em;transition:.4s;box-shadow:var(--shadow);
+  background:#D293A0;color:#fff;padding:.95em 2.2em;border-radius:999px;
+  font-size:.86rem;letter-spacing:.1em;transition:.4s;box-shadow:0 16px 30px -14px rgba(201,80,60,.6);
 }
-.btn:hover{background:var(--rose);transform:translateY(-3px)}
+.btn:hover{background:#C57C8B;transform:translateY(-3px)}
 .btn .arw{transition:.3s}
 .btn:hover .arw{transform:translateX(4px)}
 .hero-visual{position:relative}
@@ -129,11 +134,16 @@ header.scrolled{
   display:flex;align-items:center;justify-content:center;
 }
 .hero-photo img{width:100%;height:100%;object-fit:cover}
-.hero-photo.hero-logo{background:linear-gradient(160deg,#F1DBD3,#E3C7B9)}
-.hero-photo .brand-logo{width:84%;height:auto;object-fit:contain;filter:drop-shadow(0 6px 16px rgba(150,110,60,.18))}
-.logo-mark{position:relative;z-index:2;text-align:center;font-family:var(--script);font-style:italic;color:var(--rose);font-size:clamp(3rem,7vw,4.6rem);letter-spacing:.03em;line-height:1}
+.hero-photo.hero-logo{background:linear-gradient(160deg,#F0DBD1,#E6C2BB)}
+.hero-photo .brand-logo{width:84%;height:auto;object-fit:contain;filter:drop-shadow(0 6px 16px rgba(201,110,90,.2))}
+.logo-mark{position:relative;z-index:2;text-align:center;font-family:var(--script);font-style:normal;color:var(--rose);font-size:clamp(3rem,7vw,4.6rem);letter-spacing:.03em;line-height:1}
 .logo-mark span{display:block;font-family:var(--gothic);font-style:normal;font-size:.19em;letter-spacing:.4em;color:var(--ink-soft);margin-top:1.5em;font-weight:500;padding-left:.4em}
 .hero-photo::after{content:"";position:absolute;inset:0;border:1px solid rgba(255,255,255,.5);border-radius:inherit;margin:10px;pointer-events:none}
+.hero-logo-area{position:relative;text-align:center;padding:.5rem}
+.hero-logo-area .brand-logo{width:100%;max-width:430px;height:auto;filter:drop-shadow(0 10px 22px rgba(201,120,100,.16));position:relative;z-index:2}
+.hero-logo-area .tagline{font-family:var(--script);font-style:normal;color:#B97A84;font-size:1.05rem;letter-spacing:.16em;margin-top:.3rem;position:relative;z-index:2}
+.hero-logo-area .blob{position:absolute;right:2%;bottom:2%;width:160px;height:160px;border-radius:50%;background:radial-gradient(circle,#F3D9D4,transparent 70%);opacity:.65;z-index:0}
+.hero-logo-area .dots{position:absolute;left:0;top:2%;width:72px;height:72px;z-index:1;opacity:.55}
 .dot-badge{
   position:absolute;bottom:-18px;left:-22px;width:120px;height:120px;border-radius:50%;
   background:var(--white);box-shadow:var(--shadow);display:flex;flex-direction:column;
@@ -168,7 +178,7 @@ section{position:relative}
 .about-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .about-photo .frame{position:absolute;inset:12px;border:1px solid rgba(255,255,255,.55);border-radius:16px;z-index:2;pointer-events:none}
 .about-name{font-family:var(--serif);font-size:1.6rem;margin:.4rem 0 .2rem;letter-spacing:.08em}
-.about-name small{font-family:var(--script);font-style:italic;color:var(--rose);font-size:.9rem;margin-left:.6em}
+.about-name small{font-family:var(--script);font-style:normal;color:var(--rose);font-size:.9rem;margin-left:.6em}
 .about-role{color:var(--rose);font-size:.85rem;letter-spacing:.12em;margin-bottom:1.4rem}
 .about-text p{color:var(--ink-soft);font-size:.96rem;margin-bottom:1rem}
 .about-text p .em{color:var(--ink);font-weight:500}
@@ -192,7 +202,7 @@ section{position:relative}
   width:58px;height:58px;border-radius:50%;background:var(--rose-pale);
   display:flex;align-items:center;justify-content:center;margin-bottom:1.4rem;font-size:1.5rem;
 }
-.card-no{font-family:var(--script);font-style:italic;color:var(--rose-soft);font-size:1rem;position:absolute;top:1.6rem;right:1.8rem}
+.card-no{font-family:var(--script);font-style:normal;color:var(--rose-soft);font-size:1rem;position:absolute;top:1.6rem;right:1.8rem}
 .card h3{font-family:var(--serif);font-size:1.22rem;margin-bottom:.8rem;letter-spacing:.05em;font-weight:500}
 .card p{color:var(--ink-soft);font-size:.88rem;line-height:1.85}
 
@@ -216,20 +226,22 @@ section{position:relative}
 .stat:not(:last-child)::after{content:"";position:absolute;right:-.75rem;top:20%;height:60%;width:1px;background:var(--line)}
 
 /* ===== flow ===== */
-.flow{background:var(--cream)}
-.flow-list{margin-top:3rem;position:relative}
-.flow-list::before{content:"";position:absolute;left:27px;top:10px;bottom:10px;width:2px;background:linear-gradient(var(--rose-soft),transparent)}
-.flow-item{display:flex;gap:1.8rem;padding:1.3rem 0;position:relative}
-.flow-num{
-  flex:none;width:56px;height:56px;border-radius:50%;background:var(--white);
-  border:2px solid var(--rose-soft);display:flex;align-items:center;justify-content:center;
-  font-family:var(--serif);color:var(--rose);font-size:1.2rem;z-index:2;box-shadow:0 6px 16px -10px rgba(120,92,74,.5)
-}
-.flow-body h4{font-family:var(--serif);font-size:1.15rem;font-weight:500;margin-bottom:.4rem;letter-spacing:.04em}
-.flow-body p{color:var(--ink-soft);font-size:.9rem}
+.flow{background:transparent}
+.flow-steps{display:flex;flex-direction:column;gap:2.7rem;max-width:840px;margin:3rem auto 0}
+.flow-step{position:relative;background:#fff;border-radius:24px;box-shadow:0 24px 50px -34px rgba(150,90,70,.45);padding:1.8rem 2.2rem;display:grid;grid-template-columns:1.3fr .7fr;gap:1.3rem;align-items:center}
+.flow-step:not(:last-child)::after{content:"";position:absolute;left:50%;bottom:-1.5rem;transform:translateX(-50%);width:9px;height:9px;border-radius:50%;background:var(--rose-soft);box-shadow:0 -13px 0 0 var(--rose-pale),0 13px 0 0 var(--rose-pale)}
+.fs-no{display:inline-block;font-family:var(--serif);color:#B97A84;font-size:.95rem;font-weight:600;letter-spacing:.14em}
+.fs-no b{font-size:1.9em;color:#D293A0;margin-left:.08em;font-weight:700;letter-spacing:.02em}
+.flow-step h3{font-family:var(--serif);font-size:clamp(1.25rem,3vw,1.65rem);font-weight:600;color:#3A3330;margin:.35rem 0 .6rem;line-height:1.4}
+.fs-mk{background:linear-gradient(transparent 56%,#F3D4CC 56%);padding:0 .08em}
+.flow-step p{color:#5A534F;font-size:.9rem;line-height:1.85}
+.fs-vis{position:relative;text-align:center}
+.fs-vis img{width:100%;max-width:188px;height:auto;margin:0 auto;display:block}
+.fs-bubble{position:absolute;top:-4px;right:0;background:#D293A0;color:#fff;font-size:.78rem;font-weight:700;padding:.5em .95em;border-radius:14px 14px 14px 3px;box-shadow:0 10px 20px -8px rgba(201,90,70,.6)}
+@media(max-width:720px){.flow-step{grid-template-columns:1fr;text-align:center;padding:1.7rem 1.5rem 1.3rem}.fs-vis img{max-width:158px}.flow-step:not(:last-child)::after{bottom:-1.9rem}}
 
 /* ===== voice ===== */
-.voice{background:var(--white)}
+.voice{background:transparent}
 .voice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;margin-top:3rem}
 .voice-card{background:var(--cream);border-radius:20px;padding:2.2rem 1.9rem;position:relative;border:1px solid var(--line)}
 .voice-card .quote{font-family:var(--serif);font-size:2.6rem;color:var(--rose-soft);line-height:1;height:.6em;display:block}
@@ -238,19 +250,189 @@ section{position:relative}
 .voice-ava{width:42px;height:42px;border-radius:50%;background:linear-gradient(140deg,var(--rose-soft),var(--beige-deep))}
 .voice-who b{font-size:.82rem;font-weight:500;display:block}
 .voice-who small{font-size:.72rem;color:var(--ink-soft)}
+/* strengths (designer) */
+.str-sec{background:transparent;position:relative}
+.str-head-sub{font-family:var(--script);font-style:normal;color:var(--rose);font-size:1.05rem;letter-spacing:.06em;margin-top:.6rem}
+.str-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;margin-top:2.8rem}
+.str-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 14px 34px -28px rgba(120,92,74,.4);transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.str-card:hover{transform:translateY(-6px)}
+.str-illust{background:#F3E4DE;overflow:hidden}
+.str-illust img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center;display:block}
+.str-body{padding:1.3rem 1.6rem 1.7rem}
+.str-ttl{font-family:var(--gothic);font-size:1.1rem;font-weight:700;color:var(--ink);line-height:1.5;letter-spacing:.02em;display:flex;align-items:baseline;gap:.5rem}
+.str-ttl .n{color:var(--rose);font-weight:700;font-size:1rem;letter-spacing:.04em;flex:none}
+.str-desc{color:var(--ink-soft);font-size:.86rem;line-height:1.8;margin-top:.7rem}
+@media(max-width:720px){.str-grid{grid-template-columns:1fr}}
+/* works redesign (pro / palette E48E79/F5D3C8/F0EEE9) */
+.works2{background:transparent;position:relative;overflow:hidden}
+.works2 .wrap{position:relative;z-index:1}
+.wks-eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--script);font-style:normal;color:#D293A0;font-size:1.15rem;letter-spacing:.06em}
+.wks-h{font-family:var(--serif);font-size:clamp(1.75rem,4.6vw,2.6rem);font-weight:600;color:#3A3330;line-height:1.45;letter-spacing:.01em;margin:.45rem 0 .5rem}
+.wks-h em{font-style:normal;color:#D293A0}
+.wks-sub{color:#6B615C;font-size:.95rem;margin-bottom:2.3rem;line-height:1.8}
+.wks-hero{position:relative;background:#F8F0E4;border-radius:28px;padding:2.6rem 2.8rem;box-shadow:0 30px 62px -34px rgba(150,90,70,.45);display:grid;grid-template-columns:1.15fr .85fr;gap:2.4rem;align-items:center}
+.reel-mock{display:block;position:relative;width:100%;max-width:230px;margin:0 auto;border-radius:30px;overflow:hidden;border:7px solid #fff;box-shadow:0 30px 58px -26px rgba(120,60,65,.6);transition:transform .35s,box-shadow .35s}
+.reel-mock:hover{transform:translateY(-6px);box-shadow:0 40px 68px -26px rgba(120,60,65,.62)}
+.reel-mock img{display:block;width:100%;aspect-ratio:368/640;object-fit:cover}
+.reel-tap{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(60,30,35,.78));color:#fff;font-size:.76rem;font-weight:600;letter-spacing:.03em;text-align:center;padding:1.7rem .5rem .75rem}
+.wks-herotext{position:relative;z-index:2}
+.wks-label{display:inline-block;background:#F0DBD1;color:#B97A84;font-size:.76rem;font-weight:700;letter-spacing:.05em;padding:.42em .95em;border-radius:999px;margin-bottom:.9rem}
+.wks-bignum{font-family:var(--serif);font-style:normal;font-weight:700;color:#D293A0;font-size:clamp(4.2rem,14vw,7rem);line-height:.86;letter-spacing:-.01em}
+.wks-bignum .u{font-size:.34em;font-style:normal;font-weight:700;color:#3A3330;margin-left:.22em;letter-spacing:.02em}
+.wks-mean{font-family:var(--serif);font-size:1.14rem;color:#3A3330;font-weight:600;line-height:1.6;margin:.9rem 0 1rem}
+.wks-side{display:flex;gap:1.6rem;flex-wrap:wrap}
+.wks-side span{font-size:.84rem;color:#6B615C}
+.wks-side b{color:#D293A0;font-weight:700;font-size:1rem}
+.wks-herovis{position:relative;height:280px}
+.wks-herovis img{position:absolute;width:47%;aspect-ratio:9/16;object-fit:cover;border-radius:16px;box-shadow:0 22px 40px -18px rgba(150,90,70,.55);border:4px solid #fff}
+.wks-herovis img.a{left:2%;top:4%;z-index:2;transform:rotate(-5deg)}
+.wks-herovis img.b{right:2%;top:16%;z-index:1;transform:rotate(5deg)}
+.wks-viscap{position:absolute;bottom:-6px;left:0;right:0;text-align:center;font-size:.72rem;color:#8a7f79;z-index:3}
+.wks-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin-top:1.3rem;background:linear-gradient(135deg,#D493A0 0%,#DFA3AD 100%);padding:1.4rem;border-radius:26px;box-shadow:0 26px 54px -32px rgba(201,90,70,.55)}
+.wks-tile{border-radius:22px;padding:2rem 1.7rem}
+.wks-tile.w{background:#fff;box-shadow:0 16px 34px -24px rgba(120,60,65,.5)}
+.wks-tile.p{background:#fff;box-shadow:0 16px 34px -24px rgba(120,60,65,.5)}
+.wks-num{display:inline-flex;align-items:baseline;font-family:var(--serif);font-style:normal;font-weight:700;color:#D293A0;font-size:clamp(2.7rem,7vw,3.8rem);line-height:1}
+.wks-num .u{font-size:.4em;font-style:normal;font-weight:700;color:#3A3330;margin-left:.1em}
+.wks-num .p{font-size:.4em;font-style:normal;font-weight:700;color:#3A3330;margin-right:.08em}
+.wks-tmean{font-weight:600;color:#3A3330;font-size:.97rem;margin:.55rem 0 .45rem;line-height:1.55}
+.wks-tnote{font-size:.82rem;color:#6B615C;line-height:1.7}
+.wks-tnote b{color:#D293A0;font-weight:700}
+.wks-ico{width:64px;height:64px;display:block;margin-bottom:.9rem}
+.wks-herotext .wks-ico{position:absolute;top:0;right:0;margin:0;width:58px;height:58px}
+.wks-herotext{padding-right:0}
+.wks-illust{display:block;width:158px;max-width:100%;height:auto;margin:-.4rem 0 .5rem -8px}
+.wks-extra{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin-top:1.3rem}
+.wks-extra .wks-xcard b{font-size:clamp(2.4rem,5vw,3.5rem);color:#C57C8B}
+.wks-xcard{background:#fff;border-radius:20px;padding:2rem 2rem 1.8rem;box-shadow:0 26px 54px -28px rgba(201,90,70,.5);display:flex;flex-direction:column;gap:.35rem;position:relative;overflow:hidden}
+.wks-xcard::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,#D293A0,#E3A9B4)}
+.wks-xcard b{font-family:var(--serif);font-weight:700;color:#D293A0;font-size:clamp(3rem,7.2vw,4.2rem);line-height:1;white-space:nowrap}
+.wks-xcard b span{font-size:.33em;color:#3A3330;margin-left:.12em}
+.wks-xcard>span{font-size:.9rem;color:#6B615C;line-height:1.6}
+.wks-xcard.hl{background:linear-gradient(118deg,#F3D9D2 0%,#FBF1EE 100%);box-shadow:0 26px 52px -30px rgba(201,90,70,.5)}
+.wks-xcard.hl b{color:#C57C8B}
+.wks-more{text-align:center;margin-top:1.9rem}
+.wks-morebtn{display:inline-flex;align-items:center;gap:.5rem;background:#D293A0;color:#fff;font-weight:600;font-size:.96rem;letter-spacing:.03em;padding:.95rem 2.1rem;border-radius:999px;box-shadow:0 16px 32px -14px rgba(201,90,70,.6);transition:transform .3s,box-shadow .3s}
+.wks-morebtn span{transition:transform .3s}
+.wks-morebtn:hover{transform:translateY(-3px);box-shadow:0 22px 40px -14px rgba(201,90,70,.65)}
+.wks-morebtn:hover span{transform:translateX(4px)}
+.wks-asof{text-align:right;font-size:.74rem;color:#9a8e84;margin-top:1.4rem;letter-spacing:.02em}
+@media(max-width:860px){.wks-asof{text-align:left}}
+@media(max-width:860px){.wks-hero{grid-template-columns:1fr}.wks-herovis{height:300px;max-width:300px;margin:0 auto}.wks-grid{grid-template-columns:1fr}.wks-extra{grid-template-columns:1fr}.wks-herotext{padding-right:0}.wks-herotext .wks-ico{position:static;margin:0 0 1rem;width:58px;height:58px}}
+/* about redesign (palette + photo) */
+.about2{background:#F0DBD1;position:relative;overflow:hidden}
+.ab2-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:2.8rem;align-items:center;position:relative;z-index:1}
+.ab2-vis{position:relative;height:470px}
+.ab2-vis img{position:absolute;object-fit:cover;box-shadow:0 28px 52px -24px rgba(150,90,70,.5)}
+.ab2-vis .m{width:74%;height:88%;left:4%;top:6%;z-index:1;border:7px solid #fff;border-radius:150px 150px 22px 22px}
+.ab2-vis .s{width:44%;height:44%;right:0;bottom:2%;z-index:3;border:7px solid #fff;border-radius:50%}
+.ab2-dots{position:absolute;left:-14px;top:-8px;width:90px;height:90px;z-index:0;opacity:.75}
+.ab2-burst{position:absolute;right:30%;bottom:36%;width:48px;height:48px;z-index:4}
+.ab2-wave{position:absolute;left:8%;bottom:-6px;width:120px;height:20px;z-index:0;opacity:.8}
+.ab2-badge{position:absolute;right:2%;top:-4px;z-index:3;background:#D293A0;color:#fff;border-radius:16px;padding:.75rem 1rem;box-shadow:0 16px 28px -12px rgba(201,80,60,.75);text-align:center;line-height:1.05}
+.ab2-badge b{font-family:var(--serif);font-style:normal;font-size:1.6rem;display:block;font-weight:700}
+.ab2-badge small{font-size:.6rem;letter-spacing:.03em;opacity:.95}
+.ab2-eyebrow{font-family:var(--script);font-style:normal;color:#D293A0;font-size:1.15rem;letter-spacing:.06em}
+.ab2-name{font-family:var(--serif);font-size:2.2rem;letter-spacing:.06em;color:#3A3330;margin:.3rem 0 .15rem;font-weight:600}
+.ab2-name small{font-family:var(--gothic);font-size:.78rem;color:#6B615C;margin-left:.7em;letter-spacing:.05em;font-weight:500}
+.ab2-role{color:#B97A84;font-size:.85rem;font-weight:700;margin-bottom:1.2rem}
+.ab2-text p{color:#4A4440;font-size:.92rem;line-height:1.95;margin-bottom:.75rem}
+.ab2-text .em{font-weight:700;color:#3A3330}
+.ab2-text mark{background:linear-gradient(transparent 56%,#fff 56%);padding:0 .08em}
+.ab2-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.15rem}
+.ab2-tags span{background:#fff;color:#B97A84;font-size:.74rem;font-weight:700;padding:.42em .95em;border-radius:999px}
+@media(max-width:820px){.ab2-grid{grid-template-columns:1fr;gap:2rem}.ab2-vis{height:380px;max-width:440px}}
+/* about = Message style */
+.msg{position:relative;overflow:hidden;background:linear-gradient(140deg,#FAEDEA 0%,#F3DED6 55%,#F0DBD1 100%)}
+.msg::before{content:"";position:absolute;top:-120px;left:-100px;width:320px;height:320px;border-radius:46% 54% 58% 42%/48% 44% 56% 52%;background:radial-gradient(circle at 35% 35%,#F7DADA,transparent 70%);opacity:.7;z-index:0}
+.msg::after{content:"";position:absolute;bottom:-110px;right:-90px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,#F2CBCB,transparent 72%);opacity:.6;z-index:0}
+.msg-wrap{display:grid;grid-template-columns:.95fr 1.05fr;gap:2.6rem;align-items:center;position:relative;z-index:1}
+.msg-photo{position:relative;justify-self:center}
+.msg-photo .ph{width:100%;max-width:380px;aspect-ratio:4/5;object-fit:cover;border-radius:190px 190px 26px 26px;border:8px solid #fff;box-shadow:0 30px 58px -26px rgba(170,100,110,.55);display:block}
+.msg-quote{position:absolute;left:-10px;bottom:-26px;font-family:var(--script);font-style:normal;font-size:4.2rem;color:#D293A0;line-height:1;opacity:.85;z-index:2}
+.msg-script{position:absolute;right:-8px;bottom:-30px;font-family:var(--script);font-style:normal;font-weight:500;font-size:3.6rem;color:#D293A0;transform:rotate(-7deg);z-index:3;text-shadow:0 2px 8px rgba(255,255,255,.7)}
+.msg-eyebrow{font-family:var(--script);font-style:normal;color:#B97A84;font-size:1.2rem;letter-spacing:.06em}
+.msg-vtext{display:flex;flex-direction:row-reverse;justify-content:flex-start;gap:.7rem;margin:1.1rem 0 1.5rem}
+.msg-vtext span{writing-mode:vertical-rl;font-family:var(--serif);font-weight:600;font-size:1.3rem;line-height:2.1;letter-spacing:.14em;color:#3A3330;background:#FCF4F1;padding:1.3rem .55rem;border-radius:10px;box-shadow:0 12px 24px -16px rgba(170,100,110,.5)}
+.msg-vtext span:nth-child(2){margin-top:1.6rem}
+.msg-vtext span:nth-child(3){margin-top:3rem}
+.msg-sign{font-family:var(--serif);font-size:.95rem;color:#3A3330;letter-spacing:.06em;margin-bottom:1rem}
+.msg-sign b{font-size:1.4rem;margin-left:.35em;letter-spacing:.1em}
+.msg-sub{color:#544946;font-size:.9rem;line-height:1.95;max-width:30em}
+.msg-sub .em{font-weight:700;color:#3A3330}
+.msg-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.1rem}
+.msg-tags span{background:#fff;color:#B97A84;font-size:.74rem;font-weight:700;padding:.42em .95em;border-radius:999px}
+@media(max-width:820px){.msg-wrap{grid-template-columns:1fr;gap:3rem}.msg-vtext span{font-size:1.12rem}.msg-script{font-size:2.8rem}}
+/* about = Message (reference layout: overlapping photo + staircase vertical + big script) */
+.msg2{position:relative;overflow:hidden;background:transparent}
+.msg2 .deco{position:absolute;z-index:0;pointer-events:none}
+.msg2 .deco.sq1{left:4%;top:10%;width:120px;height:120px;background:rgba(240,219,209,.35);transform:rotate(18deg);border-radius:18px}
+.msg2 .deco.sq2{right:8%;bottom:12%;width:90px;height:90px;background:rgba(246,237,234,.5);transform:rotate(-12deg);border-radius:14px}
+.msg2 .deco.ci1{right:22%;top:6%;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle,rgba(242,203,203,.4),transparent 72%)}
+.msg2 .wrap{position:relative;z-index:1}
+.msg2-visual{position:relative;width:100%;margin:0 auto 1.5rem;border-radius:24px;overflow:hidden;box-shadow:0 30px 58px -30px rgba(170,100,110,.5)}
+.msg2-photo{display:block;width:100%;height:clamp(440px,50vw,600px);object-fit:cover;object-position:50% 24%}
+.msg2-vtext{position:absolute;right:4%;bottom:6%;display:flex;flex-direction:row-reverse;align-items:flex-end;gap:.85rem;z-index:3}
+.msg2-vtext span{writing-mode:vertical-rl;font-family:var(--gothic);font-weight:600;font-size:clamp(.95rem,2.2vw,1.18rem);letter-spacing:.1em;line-height:1.85;color:#45392F;background:#fff;padding:1rem .62rem;border-radius:12px;box-shadow:0 14px 30px -14px rgba(150,90,100,.5)}
+.msg2-vtext span:nth-child(1){margin-bottom:4.4rem}
+.msg2-vtext span:nth-child(2){margin-bottom:2.2rem}
+.msg2-vtext span:nth-child(3){color:#B5707C;font-weight:700}
+.msg2-script{position:absolute;left:5%;bottom:9%;font-family:var(--hand);font-style:italic;font-weight:600;font-size:clamp(2.6rem,7vw,4.2rem);line-height:1;color:#fff;z-index:4;transform:rotate(-5deg);text-shadow:0 6px 22px rgba(110,60,70,.5),0 1px 3px rgba(110,60,70,.45)}
+.msg2-intro{max-width:620px;margin:2.6rem auto 0;text-align:center}
+.msg2-sign{font-family:var(--serif);font-size:.95rem;color:#3A3330;letter-spacing:.06em;margin-bottom:.9rem}
+.msg2-sign b{font-size:1.4rem;margin-left:.35em;letter-spacing:.1em}
+.msg2-bio{font-family:var(--gothic);color:#544946;font-size:.92rem;line-height:2;max-width:34em;margin:0 auto}
+.msg2-bio .em{font-weight:700;color:#3A3330}
+.msg2-tags{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-top:1.2rem}
+.msg2-tags span{background:#fff;color:#B97A84;font-size:.74rem;font-weight:700;padding:.42em .95em;border-radius:999px}
+@media(max-width:720px){.msg2-photo{height:clamp(460px,118vw,560px);object-position:50% 20%}.msg2-vtext{right:3%;gap:.5rem}.msg2-vtext span{padding:.8rem .5rem}.msg2-vtext span:nth-child(1){margin-bottom:3.2rem}.msg2-vtext span:nth-child(2){margin-bottom:1.6rem}.msg2-script{font-size:clamp(2.2rem,11vw,3rem)}}
+/* services redesign (palette + photo cards) */
+.services2{background:transparent}
+.sv2-head{text-align:center;margin-bottom:.5rem}
+.sv2-eyebrow{font-family:var(--script);font-style:normal;color:#D293A0;font-size:1.15rem;letter-spacing:.06em}
+.sv2-h{font-family:var(--serif);font-size:clamp(1.7rem,4.5vw,2.4rem);font-weight:600;color:#3A3330;margin-top:.35rem;letter-spacing:.02em}
+.sv2-h em{font-style:normal;color:#D293A0}
+.sv2-sub{color:#6B615C;font-size:.94rem;max-width:38em;margin:.7rem auto 0;line-height:1.85}
+.sv2-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.7rem;margin-top:2.6rem}
+.sv2-card{background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 24px 48px -32px rgba(150,90,70,.4);display:flex;flex-direction:column;transition:transform .4s,box-shadow .4s}
+.sv2-card:hover{transform:translateY(-7px);box-shadow:0 32px 56px -30px rgba(150,90,70,.5)}
+.sv2-ph{position:relative;aspect-ratio:16/10;overflow:hidden}
+.sv2-ph img{width:100%;height:100%;object-fit:cover}
+.sv2-no{position:absolute;left:16px;top:12px;font-family:var(--serif);font-style:normal;color:#fff;font-size:1.7rem;text-shadow:0 2px 10px rgba(80,40,30,.45);z-index:2}
+.sv2-body{padding:1.7rem 1.8rem 1.9rem}
+.sv2-card h3{font-family:var(--serif);font-size:1.18rem;font-weight:600;color:#3A3330;margin-bottom:.7rem;letter-spacing:.02em;line-height:1.5}
+.sv2-card p{color:#5A534F;font-size:.9rem;line-height:1.95}
+.sv2-card p mark{background:linear-gradient(transparent 56%,#F0DBD1 56%);padding:0 .06em}
+@media(max-width:820px){.sv2-grid{grid-template-columns:1fr;gap:1.4rem}}
+/* stats bubbles + laurel */
+.stats2{background:transparent;position:relative}
+.stats2 .wrap{position:relative;z-index:1}
+.st2-head{text-align:center;margin-bottom:2.2rem}
+.st2-eyebrow{font-family:var(--script);font-style:normal;color:#B97A84;font-size:1.1rem;letter-spacing:.06em}
+.st2-h{font-family:var(--serif);font-size:clamp(1.6rem,4.2vw,2.3rem);font-weight:600;color:#3A3330;margin-top:.3rem}
+.sb-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;max-width:960px;margin:0 auto}
+.stat-card{background:#F8F0E4;border-radius:16px;padding:2.1rem 1rem 2.1rem;text-align:center;box-shadow:0 18px 40px -28px rgba(150,90,70,.55)}
+.sb-ico{display:block;width:56px;height:56px;margin:0 auto .9rem}
+.sb-label{display:block;font-size:.82rem;line-height:1.5;font-weight:700;color:#B97A84;letter-spacing:.03em;margin-bottom:.8rem}
+.sb-num{font-family:var(--serif);font-weight:700;font-size:clamp(2.3rem,4.4vw,3.1rem);line-height:1;letter-spacing:.01em;color:#C57C8B}
+.sb-num small{font-size:.42em;margin-left:.12em;font-weight:700;color:#9a6f69}
+@media(max-width:760px){.sb-row{grid-template-columns:repeat(2,1fr);gap:1rem}}
+@media(max-width:400px){.sb-row{grid-template-columns:1fr 1fr;gap:.7rem}.stat-card{padding:1.8rem .6rem 1.6rem}}
 /* customer voice (testimonials) */
-.cvoice{background:linear-gradient(180deg,var(--beige) 0%,var(--cream) 40%)}
+.cvoice{background:transparent}
 .cv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.6rem;margin-top:3rem}
 .cv-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:2.3rem 2rem 2rem;position:relative;overflow:hidden;box-shadow:var(--shadow)}
-.cv-no{position:absolute;top:1.1rem;right:1.5rem;font-family:var(--script);font-style:italic;color:var(--rose-soft);font-size:1.05rem;line-height:1;text-align:right}
+.cv-no{position:absolute;top:1.1rem;right:1.5rem;font-family:var(--script);font-style:normal;color:var(--rose-soft);font-size:1.05rem;line-height:1;text-align:right}
 .cv-no b{display:block;font-size:2.1rem;font-weight:500;margin-top:-.15em}
 .cv-head{display:flex;align-items:center;gap:.9rem;margin-bottom:1.1rem;padding-right:3.4rem}
-.cv-ava{width:58px;height:58px;border-radius:50%;flex:none;background:linear-gradient(140deg,var(--rose-soft),var(--beige-deep));display:flex;align-items:center;justify-content:center;font-family:var(--serif);color:#fff;font-size:1.5rem;overflow:hidden}
-.cv-ava img{width:100%;height:100%;object-fit:cover}
-.cv-ava.anon{background:linear-gradient(140deg,var(--beige-deep),var(--rose-pale));color:var(--rose);font-family:var(--script);font-style:italic;font-size:2rem}
+.cv-ava{width:68px;height:68px;flex:none;position:relative;display:flex;align-items:center;justify-content:center}
+.cv-ava::before{content:"";position:absolute;inset:-5px;border-radius:50%;background:linear-gradient(140deg,var(--rose-pale),var(--beige-deep));opacity:.85;z-index:0}
+.cv-ava img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;border-radius:50%;box-shadow:0 7px 17px rgba(176,110,120,.2)}
+.cv-ava.anon{border-radius:50%;background:linear-gradient(140deg,var(--beige-deep),var(--rose-pale));overflow:hidden;box-shadow:0 7px 17px rgba(176,110,120,.2)}
+.cv-ava.anon svg{position:relative;z-index:1}
 .cv-badge{display:inline-block;background:var(--rose);color:#fff;font-size:.64rem;letter-spacing:.04em;padding:.3em .72em;border-radius:999px;margin-bottom:.35rem}
 .cv-name{font-family:var(--serif);font-size:1.08rem;letter-spacing:.03em;line-height:1.35}
-.cv-handle{font-family:var(--script);font-style:italic;font-size:.74rem;color:var(--ink-soft);letter-spacing:.03em}
+.cv-handle{font-family:var(--script);font-style:normal;font-size:.74rem;color:var(--ink-soft);letter-spacing:.03em}
 .cv-genre{font-size:.7rem;color:var(--rose);margin-top:.18rem;letter-spacing:.02em}
 .cv-hl{font-family:var(--serif);color:var(--ink);font-size:1.12rem;line-height:1.75;font-weight:700;margin:.2rem 0 1rem;letter-spacing:.02em}
 .cv-hl .u{background:linear-gradient(transparent 62%,var(--rose-pale) 62%);padding:0 .05em}
@@ -259,8 +441,28 @@ section{position:relative}
 .cv-body u{text-decoration:none;border-bottom:2px solid var(--rose-soft);padding-bottom:1px;font-weight:500;color:var(--ink)}
 @media(max-width:720px){.cv-grid{grid-template-columns:1fr}}
 
+/* ===== worry / こんなお悩み ===== */
+.worry{background:var(--cream)}
+.worry-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:3.4rem;align-items:center}
+.worry-left{text-align:left}
+.worry-eyebrow{font-family:var(--script);font-style:normal;color:#B97A84;font-size:1.05rem;letter-spacing:.08em;display:block;margin-bottom:.5rem}
+.worry-h{font-family:var(--serif);font-weight:600;font-size:clamp(1.65rem,4.2vw,2.35rem);line-height:1.6;color:var(--ink);letter-spacing:.02em}
+.worry-h .mk{background:linear-gradient(transparent 60%,var(--rose-pale) 60%);padding:0 .08em}
+.worry-h .nb{display:inline-block}
+.worry-illust{margin-top:1.7rem;max-width:360px}
+.worry-illust img{width:100%;height:auto;display:block}
+.worry-list{list-style:none;margin:0;padding:0}
+.worry-item{display:flex;align-items:flex-start;gap:1rem;padding:1.2rem .1rem;border-bottom:1px solid var(--line)}
+.worry-item:first-child{padding-top:.2rem}
+.worry-item:last-child{border-bottom:none}
+.worry-check{flex:none;width:27px;height:27px;margin-top:.05rem}
+.worry-text{font-family:var(--gothic);font-size:1.04rem;line-height:1.7;color:var(--ink);letter-spacing:.02em}
+.worry-close{margin:2.4rem auto 0;text-align:center;font-family:var(--serif);font-weight:600;font-size:clamp(1.08rem,2.7vw,1.28rem);line-height:1.85;color:var(--ink);letter-spacing:.03em}
+.worry-close .mk{background:linear-gradient(transparent 58%,var(--rose-pale) 58%);padding:0 .1em}
+@media(max-width:820px){.worry-grid{grid-template-columns:1fr;gap:2rem}.worry-left{text-align:center}.worry-illust{margin:1.3rem auto 0;max-width:290px}}
+
 /* ===== faq ===== */
-.faq{background:var(--beige)}
+.faq{background:transparent}
 .faq-list{max-width:760px;margin:3rem auto 0}
 .faq-item{background:var(--white);border-radius:16px;margin-bottom:1rem;overflow:hidden;border:1px solid var(--line)}
 .faq-q{padding:1.3rem 1.6rem;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:500;font-size:.95rem;gap:1rem}
@@ -270,22 +472,23 @@ section{position:relative}
 .faq-a div{padding:0 1.6rem 1.4rem}
 
 /* ===== cta ===== */
-.cta-sec{background:var(--cream);text-align:center;position:relative;overflow:hidden}
-.cta-box{
-  background:linear-gradient(150deg,var(--rose-pale),var(--beige-deep));
-  border-radius:32px;padding:4.5rem 2rem;position:relative;overflow:hidden;box-shadow:var(--shadow)
-}
-.cta-box::before{content:"";position:absolute;top:-40px;right:-40px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.35)}
-.cta-box::after{content:"";position:absolute;bottom:-60px;left:-30px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.25)}
-.cta-box .eyebrow{justify-content:center}
-.cta-box h2{font-family:var(--serif);font-size:clamp(1.6rem,4.5vw,2.4rem);font-weight:500;line-height:1.6;margin-bottom:1rem;position:relative;z-index:2}
-.cta-box p{color:var(--ink-soft);position:relative;z-index:2;margin-bottom:2rem}
-.cta-box .btn{position:relative;z-index:2}
+.cta-sec{background:transparent;text-align:center;position:relative;overflow:hidden}
+.cta-sec::before{content:"";position:absolute;left:50%;top:15%;transform:translateX(-50%);width:min(560px,82%);height:250px;background:radial-gradient(ellipse at center,rgba(236,200,203,.4),transparent 70%);z-index:0;pointer-events:none}
+.cta-inner{position:relative;z-index:1;max-width:680px;margin-inline:auto}
+.cta-eyebrow{display:inline-flex;align-items:center;gap:.55em;font-family:var(--script);font-style:normal;color:var(--rose);font-size:1.1rem;letter-spacing:.1em;margin-bottom:1.1rem}
+.cta-eyebrow::before{content:"";width:30px;height:1px;background:var(--rose-soft)}
+.cta-h{font-family:var(--gothic);font-weight:700;font-size:clamp(1.5rem,5.2vw,2.65rem);line-height:1.55;letter-spacing:.02em;color:var(--ink);margin-bottom:1.25rem;word-break:auto-phrase;line-break:strict}
+.cta-h .cta-accent{background:linear-gradient(92deg,#D293A0,#C57C8B);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#C57C8B}
+.cta-sub{color:var(--ink-soft);font-size:clamp(.92rem,2.1vw,1rem);line-height:1.95;margin:0 auto 1.5rem;max-width:33em}
+.cta-ribbon{display:flex;align-items:center;justify-content:center;gap:.7em;width:fit-content;margin:0 auto 1.5rem;color:#B06E78;font-size:.85rem;font-weight:600;letter-spacing:.08em}
+.cta-ribbon::before,.cta-ribbon::after{content:"";width:20px;height:1px;background:var(--rose-soft)}
+.cta-sec .btn{font-size:.96rem;padding:1.05em 2.7em;box-shadow:0 12px 26px -12px rgba(201,120,110,.5)}
+.cta-sec .btn:hover{box-shadow:0 18px 30px -12px rgba(201,120,110,.55)}
 
 /* ===== footer ===== */
 footer{background:var(--ink);color:#EFE6DC;padding:3.5rem 0 2rem;text-align:center}
 .foot-logo{font-family:var(--serif);font-size:1.5rem;letter-spacing:.16em;margin-bottom:.4rem}
-.foot-logo small{font-family:var(--script);font-style:italic;display:block;color:var(--rose-soft);font-size:.8rem}
+.foot-logo small{font-family:var(--script);font-style:normal;display:block;color:var(--rose-soft);font-size:.8rem}
 .foot-links{display:flex;gap:1.6rem;justify-content:center;margin:1.6rem 0;flex-wrap:wrap;font-size:.82rem}
 .foot-links a{color:#CFC3B7;transition:.3s}
 .foot-links a:hover{color:#fff}
@@ -326,7 +529,7 @@ html:not(.js) .reveal{opacity:1;transform:none;transition:none}
 }
 @media(max-width:520px){
   .hero{padding:9rem 0 4rem}
-  .cta-box{padding:3.2rem 1.4rem}
+  .cta-sec::before{top:8%;height:185px}
 }
 </style>
 </head>
@@ -355,17 +558,17 @@ html:not(.js) .reveal{opacity:1;transform:none;transition:none}
 <section class="hero" id="top">
   <div class="wrap hero-inner">
     <div class="hero-copy">
-      <span class="hero-tag reveal">Instagram / YouTube / TikTok 運用代行</span>
-      <h1 class="reveal d1">
-        あなたの“らしさ”を、<br>
-        <span class="accent">届く言葉</span>にのせて。
-        <span class="thin">発信する時間がなくても、想いはちゃんと伝わる。</span>
-      </h1>
-      <p class="reveal d2">本業を持ちながら発信したいあなたへ。投稿の企画・制作から運用まで、世界観を守りながら“伝わるSNS”を丁寧に育てます。</p>
+      <span class="hero-tag reveal">SNS運用代行・動画制作・戦略設計</span>
+      <h1 class="reveal d1"><span class="l1">SNS運用、<span class="accent">何から始めればいい？</span></span><span class="l2">その悩みから、私たちにお任せください。</span></h1>
+      <p class="hero-sub reveal d2">ブランドらしさを、集客につながる発信へ。</p>
+      <p class="reveal d2">SNSの知識がなくても大丈夫。Scheerは、<br class="pcbr">何から始めるべきかわからない段階から、企画・戦略設計、動画制作、投稿、運用まで幅広く対応。<br class="pcbr">動画編集だけのご依頼も承ります。</p>
       <a href="https://line.me/R/ti/p/%40543plmve" target="_blank" rel="noopener" class="btn reveal d3">まずは相談してみる <span class="arw">→</span></a>
     </div>
     <div class="hero-visual reveal d2">
-      <div class="hero-photo hero-logo"><img class="brand-logo" src="images/scheer-logo.png" alt="Scheer ロゴ"></div>
+      <div class="hero-logo-area">
+        <span class="blob"></span>
+        <img class="brand-logo" src="images/scheer-logo-text.png" alt="Scheer">
+      </div>
     </div>
   </div>
 </section>
@@ -378,77 +581,159 @@ html:not(.js) .reveal{opacity:1;transform:none;transition:none}
   </div>
 </div>
 
-<!-- ===== ABOUT ===== -->
-<section class="about pad" id="about">
-  <div class="wrap about-grid">
-    <div class="about-photo reveal">
-      <img src="images/IMG_0049.jpg" alt="しな｜Scheer 代表" style="object-position:54% 40%">
-      <div class="frame"></div>
+<!-- ===== ABOUT (Message) ===== -->
+<section class="msg2 pad" id="about">
+  <span class="deco sq1"></span><span class="deco sq2"></span><span class="deco ci1"></span>
+  <div class="wrap">
+    <div class="msg2-visual reveal">
+      <img class="msg2-photo" src="images/IMG_0049.jpg" alt="しな｜Scheer 代表">
+      <div class="msg2-vtext">
+        <span>あなたの大切なアカウントを、</span>
+        <span>ただ作るだけで終わらせず、</span>
+        <span>その先の未来まで考える。</span>
+      </div>
+      <span class="msg2-script">Message</span>
     </div>
-    <div class="about-text reveal d1">
-      <span class="eyebrow">About Scheer</span>
-      <div class="about-name">しな</div>
-      <div class="about-role">SNS運用代行チーム「Scheer」代表</div>
-      <p><span class="em">「発信したいのに、時間・知識が足りない」</span>——そんな声にいちばん寄り添いたくて、Scheerを立ち上げました。</p>
-      <p><span class="em">Scheerは、Instagram運用や動画編集スキルに長けたメンバーが集まるSNS運用代行チーム。</span>「アカウントの運用ノウハウ」「指を止めてもらう動画編集のポイント」を知り尽くしたつくり手たちが、総フォロワー156.8万アカウントの裏側を支えています。もちろん、アカウント運用や戦略設計まで、まるっとお任せいただけます。</p>
-      <p>代表のしな自身もInstagram（@shina_lifework「おうちで働くを叶えたママ」）を運用中。開始1ヶ月で月間再生 約25.7万回、1投稿でのフォロー転換率47%、表示の83.5%がフォロワー以外という“自然に広がりフォローされる発信”を実現しました。</p>
-      <p>ただ投稿を代わりに作るのではありません。あなたの言葉の温度や世界観はそのままに、数字もファンもしっかり伸ばします。企画・台本・キャプション・分析まで、まるごとお任せください。</p>
-      <div class="about-tags">
-        <span>企画設計</span><span>リール台本</span><span>キャプション</span><span>世界観デザイン</span><span>分析改善</span>
+    <div class="msg2-intro reveal d1">
+      <div class="msg2-sign">SNS運用代行チーム「Scheer」代表 <b>しな</b></div>
+      <p class="msg2-bio">はじめまして。Scheer代表のしなです。<br>SNSは、誰かの想いや事業の魅力を届ける大切な場所。だからこそ、再生数だけを追うのではなく、<span class="em">その先にある集客やファンづくり</span>まで考えます。<br>お任せいただく以上、ただ依頼されたものを作るのではなく、目的を共有し、一つひとつ丁寧に形にしていきます。</p>
+      <div class="msg2-tags">
+        <span>Scheer代表</span><span>SNS運用経験</span><span>集客を見据える</span><span>ブランド設計</span><span>丁寧な制作</span>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ===== SERVICES ===== -->
-<section class="services pad" id="services">
-  <div class="wrap center">
-    <span class="eyebrow reveal">Services</span>
-    <h2 class="sec-title reveal d1">私たちができる、<span class="accent">3つのこと</span></h2>
-    <p class="lead reveal d2">Instagramに限らず、YouTube・TikTokなど各種SNS向けの動画制作から運用まで対応。「まるっとお任せ」も「一部だけ」も、あなたの状況に合わせて必要なところから伴走します。</p>
-  </div>
-  <div class="wrap cards">
-    <div class="card reveal">
-      <span class="card-no">01</span>
-      <div class="card-ico">✎</div>
-      <h3>動画制作・投稿まるっと</h3>
-      <p>Instagram・YouTube・TikTokなど各種SNS向けのショート動画を、台本づくりからデザイン・キャプションまで。世界観を崩さず“思わず保存したくなる”投稿に仕上げます。</p>
+<section class="services2 pad" id="services">
+  <div class="wrap">
+    <div class="sv2-head">
+      <span class="sv2-eyebrow reveal">Services</span>
+      <h2 class="sv2-h reveal">SNSの<em>お悩み</em>に応えるサービス</h2>
+      <p class="sv2-sub reveal d1">何から始めればいいかわからない方も、動画編集だけ任せたい方も。必要なところからSNS運用全体まで対応します。</p>
     </div>
-    <div class="card reveal d1">
-      <span class="card-no">02</span>
-      <div class="card-ico">◍</div>
-      <h3>アカウント運用代行</h3>
-      <p>投稿スケジュール管理・分析・改善提案までワンストップ。発信を止めずに、数字とファンをしっかり伸ばします。</p>
-    </div>
-    <div class="card reveal d2">
-      <span class="card-no">03</span>
-      <div class="card-ico">❀</div>
-      <h3>世界観・戦略設計</h3>
-      <p>「誰に・何を・どう届けるか」から一緒に整理。ブレない発信軸とビジュアルトーンをつくり、あなたらしさを言語化します。</p>
+    <div class="sv2-grid">
+      <div class="sv2-card reveal">
+        <div class="sv2-ph"><span class="sv2-no">01</span><img src="images/shina_edit_top.jpg" alt="動画制作・編集"></div>
+        <div class="sv2-body">
+          <h3>動画制作をプロに任せたい</h3>
+          <p>企画・台本制作から動画編集、投稿まで対応。ショート動画も長尺動画も、ブランドの雰囲気に合わせて制作します。<mark>編集のみのご依頼も可能</mark>です。</p>
+        </div>
+      </div>
+      <div class="sv2-card reveal d1">
+        <div class="sv2-ph"><span class="sv2-no">02</span><img src="images/shina_phone2.jpg" alt="アカウント運用代行"></div>
+        <div class="sv2-body">
+          <h3>SNS運用のやり方がわからない</h3>
+          <p>何から始めればいいかわからない方も、すでに運用中の方も。企画・制作・投稿・分析・改善まで対応し、<mark>集客やファンづくり</mark>につながる運用を目指します。</p>
+        </div>
+      </div>
+      <div class="sv2-card reveal">
+        <div class="sv2-ph"><span class="sv2-no">03</span><img src="images/shina_desk_flat.jpg" alt="世界観・戦略設計"></div>
+        <div class="sv2-body">
+          <h3>どんな投稿やデザインがいいの？</h3>
+          <p>誰に何を届けるか、発信の目的から整理。ブランドの魅力が伝わるデザインや投稿内容を考え、<mark>一貫性のあるアカウント</mark>を設計します。</p>
+        </div>
+      </div>
+      <div class="sv2-card reveal d1">
+        <div class="sv2-ph"><span class="sv2-no">04</span><img src="images/shina_office.jpg" alt="採用向けSNS運用支援"></div>
+        <div class="sv2-body">
+          <h3>採用のためのSNS運用支援</h3>
+          <p>集客だけでなく、採用を目的としたSNS運用にも対応。企業の雰囲気や働く人の魅力を伝える投稿を企画し、<mark>求職者に届くアカウントづくり</mark>を支援します。</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ===== WORKS ===== -->
-<section class="works pad" id="works">
-  <div class="wrap center">
-    <span class="eyebrow reveal">Works</span>
-    <h2 class="sec-title reveal d1">これまでの<span class="accent">制作・運用実績</span></h2>
-    <p class="lead reveal d2">スピードも、バズも、むずかしい投稿でも。数字で語れる成果を、いくつも積み上げてきました。</p>
+<section class="works2 pad" id="works">
+  <div class="wrap">
+    <span class="wks-eyebrow reveal">Works</span>
+    <h2 class="wks-h reveal">ただ見られるだけでは終わらない。<br><em>数字</em>が語る、Scheerの制作実績。</h2>
+    <p class="wks-sub reveal d1">再生・保存・フォロー。届けた先の反応にも目を向けています。</p>
+
+    <div class="wks-hero reveal d1">
+      <div class="wks-herotext">
+        <span class="wks-label">編集代行でバズ</span>
+        <div class="wks-bignum">251<span class="u">万回再生</span></div>
+        <p class="wks-mean">お預かりしたアカウントで、1本が251万回再生。</p>
+        <div class="wks-side">
+          <span>保存 <b>6万</b></span>
+          <span>リポスト <b>883</b></span>
+          <span>コメント <b>61</b>（誘導なしで）</span>
+        </div>
+      </div>
+      <a class="reel-mock" href="https://www.instagram.com/reel/DcQXPv_J-Xj/" target="_blank" rel="noopener noreferrer">
+        <img src="images/reel_case_251.jpg" alt="251万回再生したリール（お預かりアカウント）">
+        <span class="reel-tap">タップで実際のリールを見る</span>
+      </a>
+    </div>
+
+    <div class="wks-extra reveal d1">
+      <div class="wks-xcard"><b>+600<span>人</span></b><span>1本のリール投稿で増えた、フォロワー数です。</span></div>
+      <div class="wks-xcard"><b>+8,709<span>人</span></b><span>1つのアカウントが、1ヶ月で増えたフォロワー数です。</span></div>
+      <div class="wks-xcard"><b>+24,607<span>人</span></b><span>直近1ヶ月で、支援アカウント全体が増えたフォロワー数です。</span></div>
+    </div>
+
+    <div class="wks-grid">
+      <div class="wks-tile w reveal">
+        <img class="wks-illust" src="images/shina_illust_plan.png" alt="">
+        <div class="wks-num">25.7<span class="u">万回</span></div>
+        <p class="wks-tmean">自身のアカウントで、運用開始1ヶ月で達成。</p>
+        <p class="wks-tnote">うち<b>83.5%がフォロワー外</b>。知らない人にまで届いた証拠です。</p>
+      </div>
+      <div class="wks-tile p reveal d1">
+        <img class="wks-illust" src="images/shina_illust_report.png" alt="">
+        <div class="wks-num"><span class="p">約</span>2<span class="u">倍</span></div>
+        <p class="wks-tmean">ストーリーズ平均閲覧率20%以上。</p>
+        <p class="wks-tnote">一般的な優秀ライン10%との比較で、<b>約2倍</b>です。</p>
+      </div>
+      <div class="wks-tile w reveal d2">
+        <img class="wks-illust" src="images/shina_illust_edit.png" alt="">
+        <div class="wks-num">750<span class="u">本＋</span></div>
+        <p class="wks-tmean">多様なジャンルで積み重ねた制作経験。</p>
+        <p class="wks-tnote">10分以上の長尺動画も<b>60本以上</b>。</p>
+      </div>
+    </div>
+    <div class="wks-more reveal"><a class="wks-morebtn" href="#portfolio">編集の実績はこちらから<span>→</span></a></div>
+    <p class="wks-asof reveal">※実績の数値は2026年10月時点のものです。</p>
   </div>
-  <div class="wrap work-grid">
-    <div class="wk reveal"><span class="wk-ico">↗</span><p>自社アカウントを<b>開始1ヶ月で月間25.7万回再生</b>、表示の<b>83.5%がフォロワー外</b>まで自然に拡散。</p></div>
-    <div class="wk reveal d1"><span class="wk-ico">▶</span><p>クライアントの編集代行で<b>1本192万回再生</b>。<b>保存6万回</b>・リポスト883回、誘導なしでも<b>コメント61件</b>を獲得。</p></div>
-    <div class="wk reveal d2"><span class="wk-ico">▦</span><p>伸びにくいと言われる<b>フィード投稿でも4万回超</b>の再生を実現。</p></div>
-    <div class="wk reveal"><span class="wk-ico">◕</span><p>ストーリーズ平均閲覧率は<b>20%以上</b>（一般の優秀ラインは10%）。ファンが定着します。</p></div>
-    <div class="wk reveal d1"><span class="wk-ico">✦</span><p>ビジネス・金融・専門知識・ニッチジャンルなど<b>多ジャンル</b>で<b>650本以上</b>の制作実績。</p></div>
+</section>
+
+
+<!-- ===== RESULTS (運用成果) ===== -->
+<style>
+.results{position:relative}
+.res-bubbles{display:flex;justify-content:center;align-items:center;gap:clamp(.7rem,2.4vw,1.7rem);flex-wrap:wrap;margin:2.8rem auto 0;max-width:900px}
+.res-lrl{width:42px;height:122px;flex:none}
+.res-lrl.r{transform:scaleX(-1)}
+.res-bubble{width:clamp(146px,19vw,172px);aspect-ratio:1;border-radius:50%;background:linear-gradient(150deg,#D293A0,#F0DBD1);box-shadow:0 20px 38px -16px rgba(201,90,70,.55),inset 0 2px 12px rgba(255,255,255,.35);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center;padding:14px}
+.rb-label{font-size:.72rem;line-height:1.45;font-weight:600;margin-bottom:.35rem;opacity:.97}
+.rb-num{font-family:var(--serif);font-weight:700;font-size:2rem;line-height:1;letter-spacing:.01em}
+.rb-num small{font-size:.5em;margin-left:.06em;font-weight:600}
+.res-note{color:#9a8e84;font-size:.78rem;margin-top:2.1rem;letter-spacing:.02em;text-align:center;line-height:1.7}
+@media(max-width:720px){.res-lrl{display:none}.res-bubbles{gap:1rem}.res-bubble{width:42%;min-width:134px}}
+</style>
+<section class="results pad">
+  <div class="wrap center">
+    <span class="eyebrow reveal">Results</span>
+    <h2 class="sec-title reveal d1">再生数の、<span class="accent">その先へ。</span></h2>
+    <p class="lead reveal d2" style="margin-inline:auto;text-align:center">バズを、共感・集客・売上という“その先”につなげることを目指しています。</p>
+    <div class="res-bubbles reveal d2">
+      <svg class="res-lrl" viewBox="0 0 70 170" aria-hidden="true"><g fill="#D293A0"><path d="M46 168 C 30 140 26 110 30 80 C 33 54 40 36 50 20" fill="none" stroke="#D293A0" stroke-width="3" stroke-linecap="round"/><ellipse cx="26" cy="122" rx="12" ry="5" transform="rotate(-35 26 122)"/><ellipse cx="41" cy="130" rx="12" ry="5" transform="rotate(25 41 130)"/><ellipse cx="24" cy="99" rx="12" ry="5" transform="rotate(-42 24 99)"/><ellipse cx="40" cy="107" rx="12" ry="5" transform="rotate(18 40 107)"/><ellipse cx="26" cy="76" rx="11" ry="4.5" transform="rotate(-48 26 76)"/><ellipse cx="42" cy="84" rx="11" ry="4.5" transform="rotate(12 42 84)"/><ellipse cx="33" cy="54" rx="10" ry="4" transform="rotate(-55 33 54)"/><ellipse cx="46" cy="60" rx="10" ry="4" transform="rotate(5 46 60)"/><ellipse cx="44" cy="34" rx="9" ry="3.5" transform="rotate(-60 44 34)"/></g></svg>
+      <div class="res-bubble"><span class="rb-label">1本のリールに届いた<br>嬉しいコメント</span><span class="rb-num">200<small>件</small></span></div>
+      <div class="res-bubble"><span class="rb-label">1つの投稿で増えた<br>LINE登録者</span><span class="rb-num">+766<small>人</small></span></div>
+      <div class="res-bubble"><span class="rb-label">1回のローンチで<br>達成した売上</span><span class="rb-num">8<small>桁</small></span></div>
+      <svg class="res-lrl r" viewBox="0 0 70 170" aria-hidden="true"><g fill="#D293A0"><path d="M46 168 C 30 140 26 110 30 80 C 33 54 40 36 50 20" fill="none" stroke="#D293A0" stroke-width="3" stroke-linecap="round"/><ellipse cx="26" cy="122" rx="12" ry="5" transform="rotate(-35 26 122)"/><ellipse cx="41" cy="130" rx="12" ry="5" transform="rotate(25 41 130)"/><ellipse cx="24" cy="99" rx="12" ry="5" transform="rotate(-42 24 99)"/><ellipse cx="40" cy="107" rx="12" ry="5" transform="rotate(18 40 107)"/><ellipse cx="26" cy="76" rx="11" ry="4.5" transform="rotate(-48 26 76)"/><ellipse cx="42" cy="84" rx="11" ry="4.5" transform="rotate(12 42 84)"/><ellipse cx="33" cy="54" rx="10" ry="4" transform="rotate(-55 33 54)"/><ellipse cx="46" cy="60" rx="10" ry="4" transform="rotate(5 46 60)"/><ellipse cx="44" cy="34" rx="9" ry="3.5" transform="rotate(-60 44 34)"/></g></svg>
+    </div>
+    <p class="res-note reveal d3">※成果はクライアント様の実例です（8桁の売上は2つのアカウントが達成）。同様の成果を保証するものではありません。</p>
   </div>
 </section>
 
 
 <!-- ===== PORTFOLIO (works gallery) ===== -->
 <style>
-.portfolio{background:var(--cream)}
+.portfolio{background:transparent}
 .gal-sub{font-family:var(--serif);font-size:1.02rem;color:var(--ink);letter-spacing:.05em;margin:2.9rem 0 0;display:flex;align-items:center;gap:.55rem}
 .gal-sub::before{content:"";width:16px;height:2px;background:var(--rose);border-radius:2px}
 .gal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:1.3rem}
@@ -516,78 +801,107 @@ html:not(.js) .reveal{opacity:1;transform:none;transition:none}
 </section>
 
 <!-- ===== STATS ===== -->
-<section class="stats pad">
-  <div class="wrap stat-grid">
-    <div class="stat reveal"><b>156.8<span class="unit">万</span></b><p>支援アカウント総フォロワー</p></div>
-    <div class="stat reveal d1"><b>10<span class="unit">万人</span></b><p>1アカウントの年間フォロワー増</p></div>
-    <div class="stat reveal d2"><b>600<span class="unit">本以上</span></b><p>ショート動画 納品数</p></div>
-    <div class="stat reveal d3"><b>30<span class="unit">以上</span></b><p>対応アカウント数</p></div>
+<section class="stats2 pad">
+  <div class="wrap">
+    <div class="st2-head">
+      <span class="st2-eyebrow reveal">Achievements</span>
+      <h2 class="st2-h reveal">数字で伝える、Scheerの実績</h2>
+    </div>
+    <div class="sb-row reveal d1">
+      <div class="stat-card"><svg class="sb-ico" viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="28" fill="#D9929F"/><g fill="none" stroke="#fff" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="22" cy="24" r="4.2"/><circle cx="34" cy="24" r="4.2"/><path d="M14 37c0-4 3.4-6.2 8-6.2"/><path d="M42 37c0-4-3.4-6.2-8-6.2"/><path d="M22 37c0-3.3 2.7-5.2 6-5.2s6 1.9 6 5.2"/></g></svg><span class="sb-label">支援アカウント<br>総フォロワー</span><span class="sb-num">156.8<small>万人</small></span></div>
+      <div class="stat-card"><svg class="sb-ico" viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="28" fill="#D9929F"/><path d="M16 35l7.5-7.5 5 4 10-11" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M35 19.5h6.5V26" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sb-label">1アカウントで<br>年間</span><span class="sb-num">10<small>万人増</small></span></div>
+      <div class="stat-card"><svg class="sb-ico" viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="28" fill="#D9929F"/><rect x="16" y="19" width="24" height="18" rx="3.5" fill="none" stroke="#fff" stroke-width="2.3"/><path d="M25 24.5l7 3.5-7 3.5z" fill="#fff"/></svg><span class="sb-label">ショート動画<br>制作</span><span class="sb-num">750<small>本以上</small></span></div>
+      <div class="stat-card"><svg class="sb-ico" viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="28" fill="#D9929F"/><rect x="15" y="18" width="26" height="20" rx="3.5" fill="none" stroke="#fff" stroke-width="2.3"/><circle cx="24" cy="26.5" r="3.4" fill="none" stroke="#fff" stroke-width="2.3"/><path d="M18.5 34c0-3.2 2.6-4.8 5.5-4.8s5.5 1.6 5.5 4.8" fill="none" stroke="#fff" stroke-width="2.3" stroke-linecap="round"/><path d="M33 24h5M33 28.5h5" stroke="#fff" stroke-width="2.3" stroke-linecap="round"/></svg><span class="sb-label">対応<br>アカウント</span><span class="sb-num">20<small>以上</small></span></div>
+    </div>
   </div>
 </section>
 
 <!-- ===== DATA (charts) ===== -->
 <style>
-.data{background:var(--white)}
-.chart-feature{background:var(--cream);border:1px solid var(--line);border-radius:24px;padding:1.9rem 2rem 1.2rem;margin-top:2.6rem;box-shadow:var(--shadow)}
-.cf-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:.4rem;margin-bottom:.6rem}
-.cf-head h3{font-family:var(--serif);font-size:1.18rem;font-weight:500;letter-spacing:.03em}
-.cf-big{font-family:var(--serif);color:var(--rose);font-size:1.7rem;font-weight:600}
-.data-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:1.5rem}
-.chart-card{background:var(--cream);border:1px solid var(--line);border-radius:20px;padding:1.8rem 1.7rem;text-align:center;display:flex;flex-direction:column;align-items:center}
-.chart-card h4{font-family:var(--serif);font-size:1.02rem;font-weight:500;margin-bottom:1.1rem;letter-spacing:.03em}
-.chart-card .cc-note{font-size:.78rem;color:var(--ink-soft);margin-top:1rem;line-height:1.7}
-.barrow{display:flex;flex-direction:column;gap:1.1rem;width:100%;text-align:left;margin-top:.2rem}
-.bar-item .bl{display:flex;justify-content:space-between;align-items:baseline;font-size:.8rem;color:var(--ink-soft);margin-bottom:.45rem}
-.bar-item .bl b{font-family:var(--serif);color:var(--rose);font-size:1.08rem;font-weight:600}
-.bar-track{height:13px;border-radius:99px;background:var(--beige-deep);overflow:hidden}
-.bar-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--rose-soft),var(--rose))}
-@media(max-width:860px){.data-grid{grid-template-columns:1fr}}
+.data{background:transparent}
+.data-src{font-size:.8rem;color:#9a8e84;margin:.9rem auto 0;max-width:42em;letter-spacing:.02em}
+.data-dash{display:grid;grid-template-columns:1.5fr 1fr;max-width:980px;margin:2.4rem auto 0;background:#fff;border-radius:24px;box-shadow:0 26px 54px -34px rgba(150,90,70,.42);overflow:hidden}
+.dd-graph{padding:2rem 2.2rem 1.8rem}
+.dd-ghd{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:.4rem}
+.dd-graph h3{font-family:var(--serif);font-size:clamp(1.2rem,2.8vw,1.5rem);font-weight:600;color:#3A3330;letter-spacing:.02em;line-height:1.4}
+.dd-mult{flex-shrink:0;display:inline-flex;align-items:center;gap:.2rem;background:#FBEFEB;color:#C27C8B;font-weight:700;font-size:1.1rem;padding:.35rem .75rem .35rem .55rem;border-radius:999px;line-height:1}
+.dd-mult svg{width:16px;height:16px}
+.dd-prog{display:flex;align-items:center;gap:.55rem;margin-top:1rem;flex-wrap:wrap}
+.dd-chip{display:inline-flex;align-items:center;gap:.4rem;background:#F7EEEA;border-radius:999px;padding:.42rem .9rem;font-size:.82rem;color:#6E645F;line-height:1}
+.dd-chip b{color:#3A3330;font-weight:700;font-size:.98rem}
+.dd-chip svg{width:15px;height:15px;color:#C99BA6}
+.dd-chip--on{background:#D293A0}
+.dd-chip--on,.dd-chip--on b{color:#fff}
+.dd-chip--on svg{color:#fff}
+.dd-arw{width:20px;height:20px;color:#CDA9A3;flex-shrink:0}
+.dd-right{display:flex;flex-direction:column;border-left:1px solid var(--line)}
+.dd-stat{padding:1.5rem 1.7rem;flex:1;display:flex;align-items:center;gap:1.1rem}
+.dd-stat + .dd-stat{border-top:1px solid var(--line)}
+.dd-vis{flex-shrink:0;width:104px;height:104px}
+.dd-info h4{font-size:.9rem;color:#3A3330;font-weight:700;line-height:1.5}
+.dd-info h4.dd-h4b{margin:0 0 .25rem}
+.dd-info p{font-size:.78rem;color:#6E645F;line-height:1.65;margin-top:.35rem}
+.dd-save-num{font-family:var(--serif);font-weight:700;color:#D293A0;font-size:2rem;line-height:1;margin-bottom:.15rem}
+.dd-save-num small{font-size:.4em;color:#3A3330;margin-left:.1em;font-weight:700}
+.dd-legend{display:flex;flex-direction:column;gap:.28rem;margin-top:.5rem;font-size:.74rem;color:#6E645F}
+.dd-legend span{display:inline-flex;align-items:center;gap:.45rem}
+.dd-legend i{width:9px;height:9px;border-radius:2px;flex-shrink:0}
+@media(max-width:820px){.data-dash{grid-template-columns:1fr}.dd-right{border-left:0;border-top:1px solid var(--line)}}
+@media(max-width:430px){.dd-stat{flex-direction:column;text-align:center}.dd-legend{align-items:center}}
 </style>
 <section class="data pad">
   <div class="wrap center">
     <span class="eyebrow reveal">Data</span>
-    <h2 class="sec-title reveal d1">数字で見る、<span class="accent">実績</span></h2>
-    <p class="lead reveal d2">成果は、ひと目で伝わる形に。自社アカウントの成長も、数字で証明します。</p>
+    <h2 class="sec-title reveal d1">数字が<span class="accent">証明</span>する、SNS運用の力。</h2>
+    <p class="lead reveal d2">まだ知らない人に届き、フォローにつながる。その成果を数字でご紹介します。</p>
+    <p class="data-src reveal d2">※数字は、代表しなの自社アカウント「@shina_lifework」の実績です。</p>
   </div>
   <div class="wrap">
-    <div class="chart-feature reveal">
-      <div class="cf-head">
-        <h3>自社アカウントも、8月下旬に急伸</h3>
-        <div class="cf-big">約1週間で ×2</div>
-      </div>
+    <div class="data-dash reveal">
+      <div class="dd-graph">
+        <div class="dd-ghd">
+          <h3>約1週間で<br>フォロワーが2倍に。</h3>
+          <span class="dd-mult"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V6M6 12l6-6 6 6"/></svg>×2</span>
+        </div>
       <svg viewBox="0 0 640 275" width="100%" preserveAspectRatio="xMidYMid meet" role="img" aria-label="自社アカウントのフォロワー成長曲線">
-  <defs><linearGradient id="gArea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C98C7E" stop-opacity="0.34"/><stop offset="1" stop-color="#C98C7E" stop-opacity="0.02"/></linearGradient></defs>
-  <line x1="60" y1="240.0" x2="612" y2="240.0" stroke="#E4D8C9" stroke-width="1"/><text x="52" y="244.0" text-anchor="end" font-size="11" fill="#9C9186" style="font-family:'Zen Kaku Gothic New',sans-serif">0</text><line x1="60" y1="148.2" x2="612" y2="148.2" stroke="#E4D8C9" stroke-width="1"/><text x="52" y="152.2" text-anchor="end" font-size="11" fill="#9C9186" style="font-family:'Zen Kaku Gothic New',sans-serif">2,000</text><line x1="60" y1="56.4" x2="612" y2="56.4" stroke="#E4D8C9" stroke-width="1"/><text x="52" y="60.4" text-anchor="end" font-size="11" fill="#9C9186" style="font-family:'Zen Kaku Gothic New',sans-serif">4,000</text><path d="M 60.0,240.0 L 60.0,216.1 L 102.5,208.3 L 144.9,201.0 L 187.4,194.1 L 229.8,186.3 L 272.3,177.6 L 314.8,167.5 L 357.2,157.9 L 399.7,150.1 L 442.2,145.5 L 484.6,139.0 L 527.1,88.6 L 569.5,49.5 L 612.0,30.0 L 612.0,240.0 Z" fill="url(#gArea)"/><path d="M 60.0,216.1 L 102.5,208.3 L 144.9,201.0 L 187.4,194.1 L 229.8,186.3 L 272.3,177.6 L 314.8,167.5 L 357.2,157.9 L 399.7,150.1 L 442.2,145.5 L 484.6,139.0 L 527.1,88.6 L 569.5,49.5 L 612.0,30.0" fill="none" stroke="#C98C7E" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/><circle cx="612.0" cy="30.0" r="5.5" fill="#C98C7E" stroke="#fff" stroke-width="2.5"/><text x="604.0" y="18.0" text-anchor="end" font-size="15" fill="#C98C7E" style="font-family:'Zen Old Mincho',serif;font-weight:600">4,576人</text><text x="60.0" y="258" text-anchor="middle" font-size="11" fill="#9C9186" style="font-family:'Zen Kaku Gothic New',sans-serif">6月</text><text x="484.6" y="258" text-anchor="middle" font-size="11" fill="#9C9186" style="font-family:'Zen Kaku Gothic New',sans-serif">8月下旬</text><text x="612.0" y="258" text-anchor="middle" font-size="11" fill="#9C9186" style="font-family:'Zen Kaku Gothic New',sans-serif">現在</text>
+  <defs><linearGradient id="gArea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D293A0" stop-opacity="0.34"/><stop offset="1" stop-color="#D293A0" stop-opacity="0.02"/></linearGradient></defs>
+  <line x1="60" y1="240.0" x2="612" y2="240.0" stroke="#EDDDD8" stroke-width="1"/><text x="52" y="244.0" text-anchor="end" font-size="11" fill="#9C9186" style="font-family:'Zen Kaku Gothic New',sans-serif">0</text><line x1="60" y1="148.2" x2="612" y2="148.2" stroke="#EDDDD8" stroke-width="1"/><text x="52" y="152.2" text-anchor="end" font-size="11" fill="#9C9186" style="font-family:'Zen Kaku Gothic New',sans-serif">2,000</text><line x1="60" y1="56.4" x2="612" y2="56.4" stroke="#EDDDD8" stroke-width="1"/><text x="52" y="60.4" text-anchor="end" font-size="11" fill="#9C9186" style="font-family:'Zen Kaku Gothic New',sans-serif">4,000</text><path d="M 60.0,240.0 L 60.0,216.1 L 102.5,208.3 L 144.9,201.0 L 187.4,194.1 L 229.8,186.3 L 272.3,177.6 L 314.8,167.5 L 357.2,157.9 L 399.7,150.1 L 442.2,145.5 L 484.6,139.0 L 527.1,88.6 L 569.5,49.5 L 612.0,30.0 L 612.0,240.0 Z" fill="url(#gArea)"/><path d="M 60.0,216.1 L 102.5,208.3 L 144.9,201.0 L 187.4,194.1 L 229.8,186.3 L 272.3,177.6 L 314.8,167.5 L 357.2,157.9 L 399.7,150.1 L 442.2,145.5 L 484.6,139.0 L 527.1,88.6 L 569.5,49.5 L 612.0,30.0" fill="none" stroke="#D293A0" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/><circle cx="612.0" cy="30.0" r="5.5" fill="#D293A0" stroke="#fff" stroke-width="2.5"/><text x="604.0" y="18.0" text-anchor="end" font-size="15" fill="#D293A0" style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:600">4,576人</text><text x="60.0" y="258" text-anchor="middle" font-size="11" fill="#9C9186" style="font-family:'Zen Kaku Gothic New',sans-serif">6月</text><text x="484.6" y="258" text-anchor="middle" font-size="11" fill="#9C9186" style="font-family:'Zen Kaku Gothic New',sans-serif">8月下旬</text><text x="612.0" y="258" text-anchor="middle" font-size="11" fill="#9C9186" style="font-family:'Zen Kaku Gothic New',sans-serif">直近</text>
 </svg>
-      <p style="font-size:.8rem;color:var(--ink-soft);margin-top:.4rem">@shina_lifework／8月下旬に約2,000人→4,000人超へ。現在 4,576人（自社運用・実データ）</p>
-    </div>
-    <div class="data-grid">
-      <div class="chart-card reveal">
-        <h4>フォロワー外へのリーチ</h4>
-        <svg viewBox="0 0 180 180" width="150" height="150" style="max-width:150px" role="img" aria-label="フォロワー外83.5%">
-  <circle cx="90" cy="90" r="64" fill="none" stroke="#EADFD1" stroke-width="20"/>
-  <circle cx="90" cy="90" r="64" fill="none" stroke="#C98C7E" stroke-width="20" stroke-linecap="round" stroke-dasharray="335.8 402.1" transform="rotate(-90 90 90)"/>
-  <text x="90" y="86" text-anchor="middle" style="font-family:'Zen Old Mincho',serif;font-weight:600" font-size="30" fill="#463E38">83.5%</text>
-  <text x="90" y="108" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif" font-size="12" fill="#7C726A">フォロワー外</text></svg>
-        <div class="cc-note">表示の83.5%がフォロワー以外へ。自然に新しい層まで届きます。</div>
+      <div class="dd-prog">
+        <span class="dd-chip"><svg class="dd-usr" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8" r="4.2"/><path d="M4 20c0-4.4 3.6-6.5 8-6.5s8 2.1 8 6.5z"/></svg>開始 <b>約2,000</b>人</span>
+        <svg class="dd-arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h12M12 6l6 6-6 6"/></svg>
+        <span class="dd-chip dd-chip--on"><svg class="dd-usr" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8" r="4.2"/><path d="M4 20c0-4.4 3.6-6.5 8-6.5s8 2.1 8 6.5z"/></svg>直近 <b>4,576</b>人</span>
       </div>
-      <div class="chart-card reveal d1">
-        <h4>動画の納品実績</h4>
-        <div class="barrow">
-          <div class="bar-item"><div class="bl"><span>ショート動画</span><b>600本以上</b></div><div class="bar-track"><div class="bar-fill" style="width:94%"></div></div></div>
-          <div class="bar-item"><div class="bl"><span>長尺動画（10分以上）</span><b>50本以上</b></div><div class="bar-track"><div class="bar-fill" style="width:42%"></div></div></div>
+      </div>
+      <div class="dd-right">
+        <div class="dd-stat">
+          <svg class="dd-vis" viewBox="0 0 120 120" role="img" aria-label="フォロワー外への表示 83.5%">
+            <circle cx="60" cy="60" r="47" fill="none" stroke="#F0DBD1" stroke-width="15"/>
+            <circle cx="60" cy="60" r="47" fill="none" stroke="#D293A0" stroke-width="15" stroke-dasharray="246.6 48.7" transform="rotate(-90 60 60)"/>
+            <text x="60" y="57" text-anchor="middle" font-size="26" font-weight="700" fill="#D293A0" style="font-family:var(--serif)">83.5</text>
+            <text x="60" y="77" text-anchor="middle" font-size="12" fill="#8a7f79" style="font-family:var(--serif)">％</text>
+          </svg>
+          <div class="dd-info">
+            <h4>まだフォローしていない人にも届く</h4>
+            <div class="dd-legend">
+              <span><i style="background:#D293A0"></i>未フォロー 83.5%</span>
+              <span><i style="background:#F0DBD1"></i>フォロー済み 16.5%</span>
+            </div>
+          </div>
         </div>
-        <div class="cc-note">ジャンル：金融系 / Vlog / ビジネス / エンタメ など</div>
-      </div>
-      <div class="chart-card reveal d2">
-        <h4>ストーリーズ平均閲覧率</h4>
-        <div class="barrow">
-          <div class="bar-item"><div class="bl"><span>Scheerの運用</span><b>20%以上</b></div><div class="bar-track"><div class="bar-fill" style="width:80%"></div></div></div>
-          <div class="bar-item"><div class="bl"><span>一般的な優秀ライン</span><b>10%</b></div><div class="bar-track"><div class="bar-fill" style="width:40%;background:#C6B8A4"></div></div></div>
+        <div class="dd-stat">
+          <svg class="dd-vis" viewBox="0 0 120 120" role="img" aria-label="保存数 1.1万件">
+            <circle cx="60" cy="60" r="52" fill="#FBF0EC"/>
+            <path d="M45 33 h30 a6 6 0 0 1 6 6 v50 l-21 -13 -21 13 v-50 a6 6 0 0 1 6 -6 z" fill="#D293A0"/>
+            <path d="M54 56l5 5 9-10" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div class="dd-info">
+            <div class="dd-save-num">1.1<small>万件</small></div>
+            <h4 class="dd-h4b">役立つと「保存」される</h4>
+            <p>あとで見返したいと思われた保存数。</p>
+          </div>
         </div>
-        <div class="cc-note">優秀とされる10%を、安定して上回ります。</div>
       </div>
-    </div>
   </div>
 </section>
 
@@ -598,35 +912,67 @@ html:not(.js) .reveal{opacity:1;transform:none;transition:none}
     <h2 class="sec-title reveal d1">ご依頼の<span class="accent">流れ</span></h2>
     <p class="lead reveal d2">はじめての方も安心。ヒアリングから納品まで、最後まで伴走します。</p>
   </div>
-  <div class="wrap flow-list">
-    <div class="flow-item reveal"><div class="flow-num">01</div><div class="flow-body"><h4>お問い合わせ・ご相談</h4><p>フォームからお気軽に。現状のお悩みや叶えたい未来をお聞かせください。無理な勧誘は一切しません。</p></div></div>
-    <div class="flow-item reveal d1"><div class="flow-num">02</div><div class="flow-body"><h4>ヒアリング・ご提案</h4><p>目標やご予算に合わせて、最適なプランと運用方針をご提案。世界観のすり合わせもここで丁寧に。</p></div></div>
-    <div class="flow-item reveal d2"><div class="flow-num">03</div><div class="flow-body"><h4>ご契約・制作スタート</h4><p>内容にご納得いただいてからスタート。初回投稿までスケジュールを引いて進行します。</p></div></div>
+  <div class="wrap flow-steps">
+    <div class="flow-step reveal">
+      <div class="fs-main">
+        <span class="fs-no">STEP<b>01</b></span>
+        <h3><span class="fs-mk">お問い合わせ</span>・ご相談</h3>
+        <p>LINE公式からお気軽に。現状のお悩みや、叶えたい未来をお聞かせください。無理な勧誘は一切しません。</p>
+      </div>
+      <div class="fs-vis"><img src="images/flow_step1.png" alt=""></div>
+    </div>
+    <div class="flow-step reveal d1">
+      <div class="fs-main">
+        <span class="fs-no">STEP<b>02</b></span>
+        <h3><span class="fs-mk">ヒアリング</span>・ご提案</h3>
+        <p>目標やご予算に合わせて、最適なプランと運用方針をご提案。世界観のすり合わせもここで丁寧に行います。</p>
+      </div>
+      <div class="fs-vis"><img src="images/flow_step2.png" alt=""></div>
+    </div>
+    <div class="flow-step reveal d2">
+      <div class="fs-main">
+        <span class="fs-no">STEP<b>03</b></span>
+        <h3>ご契約・<span class="fs-mk">制作スタート</span></h3>
+        <p>内容にご納得いただいてからスタート。初回投稿までスケジュールを引いて、丁寧に進行します。</p>
+      </div>
+      <div class="fs-vis"><img src="images/flow_step3.png" alt=""></div>
+    </div>
   </div>
 </section>
 
-<!-- ===== VOICE ===== -->
-<section class="voice pad" id="voice">
+<!-- ===== STRENGTHS ===== -->
+<section class="voice pad str-sec" id="voice">
   <div class="wrap center">
     <span class="eyebrow reveal">Strengths</span>
     <h2 class="sec-title reveal d1">Scheerが<span class="accent">選ばれる理由</span></h2>
+    <p class="str-head-sub reveal d2">「伸ばす」も「続ける」も、ちゃんと理由があります。</p>
   </div>
-  <div class="wrap voice-grid">
-    <div class="voice-card reveal">
-      <span class="quote">01</span>
-      <p><b>動画編集スキルに長けたチーム。</b><br>「伸びる動画」を知り尽くしたつくり手が集結。ショート〜長尺まで、質の高い動画を安定して生み出します。もちろんアカウント運用・戦略設計まで、一気通貫でお任せいただけます。</p>
-      <div class="voice-who"><div class="voice-ava"></div><div><b>動画クリエイター集団</b><small>制作から運用まで一気通貫</small></div></div>
-    </div>
-    <div class="voice-card reveal d1">
-      <span class="quote">02</span>
-      <p><b>“伸ばす”を、数字で証明する。</b><br>1つのアカウントを、1年間で10万人増。クライアント様の売上も過去最高を更新するなど、結果にこだわって運用します。</p>
-      <div class="voice-who"><div class="voice-ava"></div><div><b>結果を出す力</b><small>1アカウントで年間10万人増</small></div></div>
-    </div>
-    <div class="voice-card reveal d2">
-      <span class="quote">03</span>
-      <p><b>幅広いジャンル × 確かな納品力。</b><br>ショート動画600本以上、長尺動画（10分以上）50本以上の制作実績。金融系・Vlog・ビジネス・エンタメなど、多ジャンルに対応します。</p>
-      <div class="voice-who"><div class="voice-ava"></div><div><b>対応力</b><small>ショート600本・長尺50本以上</small></div></div>
-    </div>
+  <div class="wrap str-grid">
+
+    <article class="str-card reveal">
+      <div class="str-illust"><img src="images/str_cafe.jpg" alt="ブランドの世界観を感じるカフェのワンシーン" style="object-position:center 58%"></div>
+      <div class="str-body">
+        <h3 class="str-ttl"><span class="n">01</span>そのブランドだけの世界観</h3>
+        <p class="str-desc">ブランドの魅力や空気感まで表現し、一貫した世界観を設計します。</p>
+      </div>
+    </article>
+
+    <article class="str-card reveal d1">
+      <div class="str-illust"><img src="images/str_laptop_open.jpg" alt="自宅デスクでMacBookを開いて発信する様子" style="object-position:center 60%"></div>
+      <div class="str-body">
+        <h3 class="str-ttl"><span class="n">02</span>再生数の、その先まで考える</h3>
+        <p class="str-desc">再生数だけでなく、集客やファンづくりにつながる発信を目指します。</p>
+      </div>
+    </article>
+
+    <article class="str-card reveal d2">
+      <div class="str-illust"><img src="images/str_backview.jpg" alt="自宅デスクで企画から制作・運用まで進める様子" style="object-position:center 40%"></div>
+      <div class="str-body">
+        <h3 class="str-ttl"><span class="n">03</span>知識ゼロからすべてお任せ</h3>
+        <p class="str-desc">何から始めればいいかわからなくても、企画から制作・運用まで対応します。</p>
+      </div>
+    </article>
+
   </div>
 </section>
 
@@ -634,8 +980,8 @@ html:not(.js) .reveal{opacity:1;transform:none;transition:none}
 <section class="cvoice pad" id="customer-voice">
   <div class="wrap center">
     <span class="eyebrow reveal">Voice</span>
-    <h2 class="sec-title reveal d1">お客様の<span class="accent">声</span></h2>
-    <p class="lead reveal d2" style="margin-inline:auto;text-align:center">実際にご依頼いただいているクライアント様から届いた、ありのままの声です。</p>
+    <h2 class="sec-title reveal d1">お任せいただいた<span class="accent">お客様の声</span></h2>
+    <p class="lead reveal d2" style="margin-inline:auto;text-align:center">実際にScheerへご依頼いただいたお客様の声をご紹介します。</p>
   </div>
   <div class="wrap cv-grid">
 
@@ -662,7 +1008,7 @@ html:not(.js) .reveal{opacity:1;transform:none;transition:none}
       <div class="cv-head">
         <div class="cv-ava"><img src="images/cv_fuji.jpg" alt="手相鑑定士ふじ"></div>
         <div>
-          <span class="cv-badge">Instagram 8,660</span>
+          <span class="cv-badge">Instagram 1万</span>
           <div class="cv-name">手相鑑定士ふじ</div>
           <div class="cv-handle">@fuji_tesou</div>
           <div class="cv-genre">手相鑑定｜動画編集</div>
@@ -670,15 +1016,15 @@ html:not(.js) .reveal{opacity:1;transform:none;transition:none}
       </div>
       <p class="cv-hl">投稿したら、<span class="u">24時間で2万再生</span>を超えました。</p>
       <div class="cv-body">
-        <p>動画編集はいつも<u>納期よりかなり早く納品</u>してくださり、フロント発信を止めずに運用できています。本当にお願いしてよかったです。</p>
-        <p>本来やりたかった鑑定や講座準備に使える時間が増えました。こちらの記載ミスにも細やかに確認してくださる丁寧さに助けられています。</p>
+        <p>動画編集はいつも<u>納期よりかなり早く納品</u>してくださり、フロント発信を止めずに運用できています。リーチが上がったタイミングで、納期をめっちゃ繰り上げて対応してくれたおかげで、<u>ひとつの目標であった1万人フォロワーを達成</u>することができました。</p>
+        <p>鑑定や講座準備に使える時間も増え、細やかに確認してくださる丁寧さにも助けられています。</p>
       </div>
     </div>
 
     <div class="cv-card reveal">
       <span class="cv-no">Voice<b>3</b></span>
       <div class="cv-head">
-        <div class="cv-ava anon"><svg viewBox="0 0 64 64" width="66%" height="66%" aria-hidden="true"><g fill="#C98C7E"><path d="M32 11c-7.7 0-12.5 5.6-12.5 14.5 0 4.8 1.6 8.4 1.6 12.5h3.4c-.9-2.8-1.5-5.6-1.5-9.5 0-5.6 3.6-9.5 9-9.5s9 3.9 9 9.5c0 3.9-.6 6.7-1.5 9.5h3.4c0-4.1 1.6-7.7 1.6-12.5C44.5 16.6 39.7 11 32 11z"/><circle cx="32" cy="27.5" r="7.6"/><path d="M18 57c0-8.6 6.6-13.5 14-13.5S46 48.4 46 57z"/></g></svg></div>
+        <div class="cv-ava anon"><svg viewBox="0 0 64 64" width="60%" height="60%" aria-hidden="true"><g fill="#7D716B"><circle cx="32" cy="25" r="11.5"/><path d="M12.5 53.5c0-10.9 8.7-17.5 19.5-17.5s19.5 6.6 19.5 17.5z"/></g></svg></div>
         <div>
           <div class="cv-name">推し活アカウント</div>
           <div class="cv-genre">推し活｜ディレクション</div>
@@ -767,27 +1113,51 @@ html:not(.js) .reveal{opacity:1;transform:none;transition:none}
 </section>
 
 <!-- ===== FAQ ===== -->
+<!-- ===== WORRY / こんなお悩み ===== -->
+<section class="worry pad" id="worry">
+  <div class="wrap">
+    <div class="worry-grid">
+      <div class="worry-left reveal">
+        <span class="worry-eyebrow">Check</span>
+        <h2 class="worry-h">こんな<span class="mk">お悩み</span>は<span class="nb">ありませんか？</span></h2>
+        <div class="worry-illust"><img src="images/shina_illust_plan.png" alt="SNS運用に悩んで考えている女性のイラスト"></div>
+      </div>
+      <ul class="worry-list reveal d1">
+        <li class="worry-item"><svg class="worry-check" viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="13" fill="#F6E4E4"/><path d="M8.4 14.6l3.7 3.7 7.5-8.5" fill="none" stroke="#D293A0" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="worry-text">SNS担当になったけど、何から始めればいい？</span></li>
+        <li class="worry-item"><svg class="worry-check" viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="13" fill="#F6E4E4"/><path d="M8.4 14.6l3.7 3.7 7.5-8.5" fill="none" stroke="#D293A0" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="worry-text">社内にSNS運用に詳しい人がいない</span></li>
+        <li class="worry-item"><svg class="worry-check" viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="13" fill="#F6E4E4"/><path d="M8.4 14.6l3.7 3.7 7.5-8.5" fill="none" stroke="#D293A0" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="worry-text">動画制作をプロにお願いしたい</span></li>
+        <li class="worry-item"><svg class="worry-check" viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="13" fill="#F6E4E4"/><path d="M8.4 14.6l3.7 3.7 7.5-8.5" fill="none" stroke="#D293A0" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="worry-text">投稿しているけど、集客につながらない</span></li>
+        <li class="worry-item"><svg class="worry-check" viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="13" fill="#F6E4E4"/><path d="M8.4 14.6l3.7 3.7 7.5-8.5" fill="none" stroke="#D293A0" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="worry-text">採用にSNSを活用したいけど、方法がわからない</span></li>
+      </ul>
+    </div>
+    <p class="worry-close reveal d1">ひとつでも当てはまったら、まずは<span class="mk">お気軽にご相談ください</span>。</p>
+  </div>
+</section>
+
 <section class="faq pad" id="faq">
   <div class="wrap center">
     <span class="eyebrow reveal">FAQ</span>
     <h2 class="sec-title reveal d1">よくある<span class="accent">ご質問</span></h2>
   </div>
   <div class="faq-list">
-    <div class="faq-item reveal"><div class="faq-q">写真や素材がなくてもお願いできますか？<span class="mark">＋</span></div><div class="faq-a"><div>はい、大丈夫です。構成やデザインでしっかりカバーします。必要に応じて、撮影のアドバイスや現地での撮影代行などもいたします。</div></div></div>
-    <div class="faq-item reveal"><div class="faq-q">どのくらいの期間からお願いできますか？<span class="mark">＋</span></div><div class="faq-a"><div>基本は3ヶ月〜の伴走をおすすめしていますが、単発の投稿制作やスポット相談も承っています。まずはご相談ください。</div></div></div>
-    <div class="faq-item reveal"><div class="faq-q">料金はどのくらいですか？<span class="mark">＋</span></div><div class="faq-a"><div>ご依頼内容（制作のみ／運用込み など）によって変わります。ヒアリングのうえ、ご予算に合わせたプランをご提案します。</div></div></div>
-    <div class="faq-item reveal"><div class="faq-q">Instagram以外（YouTube・TikTokなど）もお願いできますか？<span class="mark">＋</span></div><div class="faq-a"><div>はい。各種SNS向けの動画制作から運用まで対応しています。アカウントの目的に合わせて、最適なプラットフォームの組み合わせをご提案します。</div></div></div>
+    <div class="faq-item reveal"><div class="faq-q">SNSの知識がまったくなくても依頼できますか？<span class="mark">＋</span></div><div class="faq-a"><div>はい、もちろんです。SNS運用の経験がなくても問題ありません。何から始めればいいかわからない段階から、目的やご希望を伺い、企画・戦略設計・制作・運用までサポートします。</div></div></div>
+    <div class="faq-item reveal"><div class="faq-q">動画編集だけの依頼もできますか？<span class="mark">＋</span></div><div class="faq-a"><div>はい、動画編集のみのご依頼も可能です。ショート動画から10分以上の長尺動画まで対応しています。企画や台本制作、投稿作業なども含め、必要な業務だけをお任せいただけます。</div></div></div>
+    <div class="faq-item reveal"><div class="faq-q">採用を目的としたSNS運用もお願いできますか？<span class="mark">＋</span></div><div class="faq-a"><div>はい、採用を目的としたSNS運用にも対応しています。企業の雰囲気や働く人の魅力が求職者に伝わるよう、投稿内容の企画から動画制作、アカウント運用までサポートします。</div></div></div>
+    <div class="faq-item reveal"><div class="faq-q">Instagram以外のSNSにも対応していますか？<span class="mark">＋</span></div><div class="faq-a"><div>はい、Instagramだけでなく、YouTubeやTikTokの動画制作・運用にも対応しています。媒体ごとの特徴や発信の目的を踏まえ、ご希望のサービスや対応範囲についてご相談いただけます。</div></div></div>
+    <div class="faq-item reveal"><div class="faq-q">どのくらいの期間からお願いできますか？<span class="mark">＋</span></div><div class="faq-a"><div>継続的なSNS運用は3ヶ月以上のご契約をおすすめしていますが、単発の動画制作やスポットでのご相談にも対応しています。まずはご希望の内容や期間をお聞かせください。</div></div></div>
+    <div class="faq-item reveal"><div class="faq-q">料金はどのくらいですか？<span class="mark">＋</span></div><div class="faq-a"><div>ご依頼内容によって料金は異なります。動画制作のみ、SNS運用全体のご依頼など、ご希望の業務やご予算を伺ったうえで、最適なプランをご提案します。</div></div></div>
   </div>
 </section>
 
 <!-- ===== CTA ===== -->
 <section class="cta-sec pad" id="contact">
   <div class="wrap">
-    <div class="cta-box reveal">
-      <span class="eyebrow">Contact</span>
-      <h2>あなたの発信を、<br>いちばん近くで支えます。</h2>
-      <p>「こんなこと相談していいのかな」も大歓迎。まずは気軽にメッセージを送ってください。</p>
-      <a href="https://line.me/R/ti/p/%40543plmve" target="_blank" rel="noopener" class="btn">LINE公式でお問い合わせ <span class="arw">→</span></a>
+    <div class="cta-inner reveal">
+      <span class="cta-eyebrow">Contact</span>
+      <h2 class="cta-h">あなたのブランドの魅力を、<br><span class="cta-accent">届けたい人に届く発信へ。</span></h2>
+      <p class="cta-sub">運用をすべて任せたい方も、動画編集だけお願いしたい方も。<br class="pcbr">まずは今のお悩みをお聞かせください。</p>
+      <span class="cta-ribbon">ご相談だけでも大歓迎</span>
+      <a href="https://line.me/R/ti/p/%40543plmve" target="_blank" rel="noopener" class="btn cta-btn">まずは気軽に相談してみる <span class="arw">→</span></a>
     </div>
   </div>
 </section>
